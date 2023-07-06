@@ -21,7 +21,7 @@ export default async function SectionByCountry({
         {countries.map(country => (
           <Link
             key={country.code}
-            href={`/brands/${country.code}`}
+            href={`/${lng}/brands/${country.code}`}
             className="bg-gray-400/5 px-6 py-4 space-y-2 text-center"
           >
             <div className="text-lg font-semibold tracking-tight text-gray-900">
