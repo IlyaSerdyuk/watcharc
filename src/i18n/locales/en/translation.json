@@ -3,6 +3,7 @@
   "nav-brands": "Brands",
   "brands": "Brands",
   "by-first-letter": "By first letter",
+  "by-country": "By countries",
   "brands-by-first-number": "Brands starting with number",
   "brands-by-first-letter": "Brands starting with \"{{letter}}\""
 }

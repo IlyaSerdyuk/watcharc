@@ -15,6 +15,24 @@ export interface DbBrand {
   year_founded_accuracy: 'year' | 'decade' | 'century' | null;
 }
 
+export interface DbBrandCountry {
+  id: number;
+  brand_id: number;
+  country_id: number;
+  type: 'founded' | 'current' | null;
+}
+
+export interface DbCountry {
+  id: number;
+  code: string;
+  title_en: string;
+  title_fr: string;
+  title_de: string;
+  title_ru: string;
+  title_it: string;
+  title_es: string;
+}
+
 export class DB {
   constructor(public readonly knex: Knex) {}
   get brandAliases() {
@@ -22,5 +40,11 @@ export class DB {
   }
   get brands() {
     return this.knex<DbBrand>('brands');
+  }
+  get brandsCountries() {
+    return this.knex<DbBrandCountry>('brands__countries');
+  }
+  get countries() {
+    return this.knex<DbCountry>('countries');
   }
 }

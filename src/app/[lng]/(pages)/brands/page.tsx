@@ -1,7 +1,9 @@
 import Title from '@components/Title';
 import useTranslation from '@i18n/server';
 import getAlphabetIndex from '@models/brand/getAlphabetIndex';
+import getIndex from '@models/country/getIndex';
 
+import SectionByCountry from './SectionByCountry';
 import SectionByFirstLetter from './SectionByFirstLetter';
 
 export async function generateMetadata({ params: { lng } }: PageProps) {
@@ -14,11 +16,15 @@ export async function generateMetadata({ params: { lng } }: PageProps) {
 
 export default async function BrandPage({ params: { lng } }: PageProps) {
   const { t } = await useTranslation(lng);
-  const alphabetIndex = await getAlphabetIndex();
+  const [alphabetIndex, countriesIndex] = await Promise.all([
+    getAlphabetIndex(),
+    getIndex(lng),
+  ]);
   return (
     <>
       <Title title={t('brands')} />
       <SectionByFirstLetter lng={lng} alphabet={alphabetIndex} />
+      <SectionByCountry lng={lng} countries={countriesIndex} />
     </>
   );
 }

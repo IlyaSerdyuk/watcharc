@@ -3,6 +3,7 @@
   "nav-brands": "Бренды",
   "brands": "Бренды",
   "by-first-letter": "По первой букве",
+  "by-country": "По стране",
   "brands-by-first-number": "Бренды, начинающиеся с цифры",
   "brands-by-first-letter": "Бренды, начинающиеся с «{{letter}}»"
 }
