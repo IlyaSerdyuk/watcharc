@@ -9,6 +9,10 @@
   "brands-by-first-number": "Brands starting with number",
   "brands-by-first-letter": "Brands starting with \"{{letter}}\"",
   "brands-by-country": "Brands by country",
+  "brands-by-founded": {
+    "decade": "Brands founded in the {{decade}}s",
+    "century": "Brands founded in the {{century}} century"
+  },
   "brands-founded": "Brands by year of foundation",
   "century": "century"
 }

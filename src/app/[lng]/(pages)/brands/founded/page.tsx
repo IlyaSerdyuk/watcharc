@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import Breadcrumbs from '@components/Breadcrumbs';
 import Title from '@components/Title';
 import centuryHelper from '@i18n/centuryHelper';
@@ -11,6 +13,13 @@ export async function generateMetadata({ params: { lng } }: PageProps) {
     title: t('brands-founded'),
   };
 }
+
+const urlHelper = (lng: Languages, century: string, decade: string) => {
+  const prefix = '/brands/founded/';
+  const path =
+    decade === 'unknown' ? `${century}xx` : `${decade.substring(0, 3)}x`;
+  return `${prefix}${path}`;
+};
 
 export default async function FoundedIndexPage({ params: { lng } }: PageProps) {
   const { t } = await useTranslation(lng);
@@ -40,9 +49,10 @@ export default async function FoundedIndexPage({ params: { lng } }: PageProps) {
                 </div>
                 <div className="flex-1 flex flex-wrap gap-2">
                   {Object.entries(decades).map(([decade, number]) => (
-                    <div
+                    <Link
                       key={decade}
-                      className="bg-gray-400/5 w-28 px-6 py-4 space-y-2 text-center"
+                      href={urlHelper(lng, century, decade)}
+                      className="bg-gray-400/5 hover:bg-gray-900/5 focus:bg-gray-900/5 w-28 px-6 py-4 space-y-2 text-center"
                     >
                       <div className="text-lg font-semibold tracking-tight text-gray-900">
                         {decade !== 'unknown'
@@ -52,7 +62,7 @@ export default async function FoundedIndexPage({ params: { lng } }: PageProps) {
                       <div className="text-sm font-semibold leading-6 text-gray-600">
                         {number}
                       </div>
-                    </div>
+                    </Link>
                   ))}
                 </div>
               </div>

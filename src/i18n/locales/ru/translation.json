@@ -9,6 +9,10 @@
   "brands-by-first-number": "Бренды, начинающиеся с цифры",
   "brands-by-first-letter": "Бренды, начинающиеся с «{{letter}}»",
   "brands-by-country": "Бренды по стране",
+  "brands-by-founded": {
+    "decade": "Бренды, основанные в {{decade}}-х",
+    "century": "Бренды, основанные в {{century}} веке"
+  },
   "brands-founded": "Бренды по году основания",
   "century": "век"
 }
