@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import useTranslation from '@i18n/server';
 
 interface SectionProps {
@@ -17,8 +19,9 @@ export default async function SectionByCountry({
       </h2>
       <div className="grid xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-0.5 justify-center">
         {countries.map(country => (
-          <div
+          <Link
             key={country.code}
+            href={`/brands/${country.code}`}
             className="bg-gray-400/5 px-6 py-4 space-y-2 text-center"
           >
             <div className="text-lg font-semibold tracking-tight text-gray-900">
@@ -27,7 +30,7 @@ export default async function SectionByCountry({
             <div className="text-sm font-semibold leading-6 text-gray-600">
               {country.number}
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>
