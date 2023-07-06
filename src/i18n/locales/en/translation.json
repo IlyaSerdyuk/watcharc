@@ -1,6 +1,8 @@
 {
+  "meta-description": "A project to collect and catalog information about all kinds of watches",
   "nav-brands": "Brands",
   "brands": "Brands",
   "by-first-letter": "By first letter",
-  "meta-description": "A project to collect and catalog information about all kinds of watches"
+  "brands-by-first-number": "Brands starting with number",
+  "brands-by-first-letter": "Brands starting with \"{{letter}}\""
 }

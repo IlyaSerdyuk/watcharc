@@ -10,7 +10,9 @@ export default function DefaultLayout({
   return (
     <>
       <Header lng={lng} />
-      <main className="max-w-screen-2xl mx-auto px-6 lg:px-8">{children}</main>
+      <main className="max-w-screen-2xl mx-auto px-6 lg:px-8 pb-12">
+        {children}
+      </main>
     </>
   );
 }
