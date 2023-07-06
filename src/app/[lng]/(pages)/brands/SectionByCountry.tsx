@@ -22,7 +22,7 @@ export default async function SectionByCountry({
           <Link
             key={country.code}
             href={`/${lng}/brands/${country.code}`}
-            className="bg-gray-400/5 px-6 py-4 space-y-2 text-center"
+            className="bg-gray-400/5 hover:bg-gray-900/5 focus:bg-gray-900/5 px-6 py-4 space-y-2 text-center"
           >
             <div className="text-lg font-semibold tracking-tight text-gray-900">
               {country.title}
