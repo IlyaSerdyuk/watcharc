@@ -20,7 +20,9 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@app/*": ["./src/app/*"],
+      "@i18n/*": ["./src/i18n/*"],
+      "@services/*": ["./src/services/*"]
     }
   },
   "include": [
