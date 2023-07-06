@@ -23,6 +23,7 @@
       "@app/*": ["./src/app/*"],
       "@components/*": ["./src/components/*"],
       "@i18n/*": ["./src/i18n/*"],
+      "@models/*": ["./src/models/*"],
       "@services/*": ["./src/services/*"]
     }
   },

@@ -7,7 +7,7 @@ const prettierConfig = {
   importOrder: [
     '^server-only$',
     '<THIRD_PARTY_MODULES>',
-    '^@(app|components|i18n|services)/((?!svg$|css$).)*$',
+    '^@(app|components|i18n|models|services)/((?!svg$|css$).)*$',
     '^[./].((?!svg$|css$).)*$',
     '.(css|svg)$',
   ],

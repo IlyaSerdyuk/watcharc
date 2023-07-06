@@ -1,12 +1,15 @@
 import Link from 'next/link';
 
+import useTranslation from '@i18n/server';
+
 import HeaderLang from './HeaderLang';
 
-export default function Header({ lng }: { lng: string }) {
+export default async function Header({ lng }: { lng: string }) {
+  const { t } = await useTranslation(lng);
   return (
     <header>
       <nav
-        className="mx-auto flex max-w-screen-2xl items-center justify-between p-6 lg:px-8"
+        className="mx-auto flex max-w-screen-2xl items-center justify-between gap-x-6 p-6 lg:px-8"
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
@@ -15,6 +18,15 @@ export default function Header({ lng }: { lng: string }) {
             className="-m-1.5 p-1.5 text-base font-extrabold leading-6"
           >
             WatchArc
+          </Link>
+        </div>
+
+        <div className="flex">
+          <Link
+            href={`/${lng}/brands`}
+            className="text-sm font-semibold leading-6 text-gray-900"
+          >
+            {t('nav-brands')}
           </Link>
         </div>
 
