@@ -4,7 +4,11 @@
   "brands": "Бренды",
   "by-first-letter": "По первой букве",
   "by-country": "По стране",
+  "by-other": "Прочие группировки",
+  "by-founded": "По году основания",
   "brands-by-first-number": "Бренды, начинающиеся с цифры",
   "brands-by-first-letter": "Бренды, начинающиеся с «{{letter}}»",
-  "brands-by-country": "Бренды по стране"
+  "brands-by-country": "Бренды по стране",
+  "brands-founded": "Бренды по году основания",
+  "century": "век"
 }

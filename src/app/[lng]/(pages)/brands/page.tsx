@@ -5,6 +5,7 @@ import getIndex from '@models/country/getIndex';
 
 import SectionByCountry from './SectionByCountry';
 import SectionByFirstLetter from './SectionByFirstLetter';
+import SectionByOther from './SectionByOther';
 
 export async function generateMetadata({ params: { lng } }: PageProps) {
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -25,6 +26,7 @@ export default async function BrandPage({ params: { lng } }: PageProps) {
       <Title title={t('brands')} />
       <SectionByFirstLetter lng={lng} alphabet={alphabetIndex} />
       <SectionByCountry lng={lng} countries={countriesIndex} />
+      <SectionByOther lng={lng} />
     </>
   );
 }

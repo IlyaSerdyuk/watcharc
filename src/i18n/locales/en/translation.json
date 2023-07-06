@@ -4,7 +4,11 @@
   "brands": "Brands",
   "by-first-letter": "By first letter",
   "by-country": "By countries",
+  "by-other": "Other groups",
+  "by-founded": "By year of foundation",
   "brands-by-first-number": "Brands starting with number",
   "brands-by-first-letter": "Brands starting with \"{{letter}}\"",
-  "brands-by-country": "Brands by country"
+  "brands-by-country": "Brands by country",
+  "brands-founded": "Brands by year of foundation",
+  "century": "century"
 }
