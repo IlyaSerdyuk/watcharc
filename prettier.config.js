@@ -5,6 +5,8 @@ const prettierConfig = {
   bracketSpacing: true,
   endOfLine: 'auto',
   importOrder: [
+    '^server-only$',
+    '<THIRD_PARTY_MODULES>',
     '^@/((?!svg$|css$).)*$',
     '^[./].((?!svg$|css$).)*$',
     '.(css|svg)$',
