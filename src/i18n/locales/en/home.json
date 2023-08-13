@@ -1,3 +1,23 @@
 {
-  "title": "A project to collect and catalog information about all kinds of watches"
+  "title": "The largest catalog of modern watch\u00a0brands",
+  "number": "{{value, number}}",
+  "brands_one": "brand",
+  "brands_few": "brands",
+  "countries_one": "country",
+  "countries_many": "countries",
+  "import-sources": "The information for the site was collected from open sources – we studied about two hundred open catalogs of large online stores, encyclopedias, forums and websites of watch enthusiasts, as well as websites and social networks of all represented brands.",
+  "import-status": "Now, to confirm all the data, we are building communications with official representatives of brands, archives and museums.",
+  "contact": {
+    "title": "Write to us",
+    "call-1": "Do you know about a brand that we do not have?",
+    "call-2": "Or would you like to supplement the information provided by us?",
+    "call-3": "Or maybe you are the official representative of the brand?",
+    "call-4": "Write to us! We are waiting for your messages!",
+    "message": "Message",
+    "email": "Email",
+    "email-motivation": "Please indicate if you would like to receive our response.",
+    "send": "Send",
+    "answer-time": "Average response time – 1 week",
+    "thanks": "Thank you for your message!"
+  }
 }

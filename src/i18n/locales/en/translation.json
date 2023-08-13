@@ -1,5 +1,5 @@
 {
-  "meta-description": "A project to collect and catalog information about all kinds of watches",
+  "meta-description": "The largest catalog of modern watch brands",
   "nav-brands": "Brands",
   "brands": "Brands",
   "by-first-letter": "By first letter",
@@ -14,5 +14,7 @@
     "century": "Brands founded in the {{century}} century"
   },
   "brands-founded": "Brands by year of foundation",
-  "century": "century"
+  "century": "century",
+  "footer": "Footer",
+  "privacy-info": "We do not collect any data that can identify you. We use cookies only to save the language you chose last time."
 }
