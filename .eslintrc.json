@@ -5,5 +5,13 @@
   },
   "parserOptions": {
     "project": "./tsconfig.json"
-  }
+  },
+  "overrides": [
+    {
+      "files": ["src/app/api/**/route.ts"],
+      "rules": {
+        "import/prefer-default-export": "off"
+      }
+    }
+  ]
 }

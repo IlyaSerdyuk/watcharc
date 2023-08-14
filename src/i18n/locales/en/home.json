@@ -18,6 +18,8 @@
     "email-motivation": "Please indicate if you would like to receive our response.",
     "send": "Send",
     "answer-time": "Average response time – 1 week",
-    "thanks": "Thank you for your message!"
+    "sending": "Message is sending\u2026",
+    "successfully": "Thank you for your message!",
+    "fail": "Something went wrong and we didn't receive your message. Please\u00a0try\u00a0later."
   }
 }

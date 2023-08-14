@@ -50,7 +50,7 @@ export default async function Home({ params: { lng } }: PageProps) {
           </div>
         </div>
       </div>
-      <ContactForm t={t} />
+      <ContactForm lng={lng} />
     </>
   );
 }

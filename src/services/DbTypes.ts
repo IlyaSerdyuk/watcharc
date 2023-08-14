@@ -33,6 +33,13 @@ export interface DbCountry {
   title_es: string;
 }
 
+export interface DbMessage {
+  id: number;
+  datetime: Date;
+  message: string | null;
+  email: string | null;
+}
+
 export class DB {
   constructor(public readonly knex: Knex) {}
   get brandAliases() {
@@ -46,5 +53,8 @@ export class DB {
   }
   get countries() {
     return this.knex<DbCountry>('countries');
+  }
+  get messages() {
+    return this.knex<DbMessage>('messages');
   }
 }
