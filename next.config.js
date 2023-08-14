@@ -16,6 +16,15 @@ const nextConfig = {
       },
     ];
   },
+  redirects() {
+    return [
+      {
+        source: '/:lng/brand',
+        destination: '/:lng/brands',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;

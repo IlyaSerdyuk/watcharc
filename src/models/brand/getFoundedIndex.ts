@@ -1,4 +1,5 @@
-import { YearAccuracy, db } from '@services/Db';
+import { db } from '@services/Db';
+import { YearAccuracy } from '@services/year';
 
 /**
  * Получить карту по датам основания.

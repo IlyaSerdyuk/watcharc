@@ -1,0 +1,13 @@
+{
+  "website": "Website",
+  "founded-in-year": "Founded in {{year}}",
+  "closed-in": "Closed in {{year}}",
+  "country": "Country",
+  "founded-in-country": "Founded in",
+  "address": "Address",
+  "phone": "Phone",
+  "email": "Email",
+  "credibility-open-source": "The information is collected from open sources, awaiting confirmation and additions from brand representatives.",
+  "credibility-retailer": "Information provided by the brand retailer.",
+  "credibility-owner": "Information provided by the official representative of the brand."
+}

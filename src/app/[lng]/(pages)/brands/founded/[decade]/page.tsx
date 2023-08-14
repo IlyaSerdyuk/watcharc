@@ -6,8 +6,10 @@ import Title from '@components/Title';
 import centuryHelper from '@i18n/centuryHelper';
 import translate from '@i18n/server';
 import getListByFounded from '@models/brand/getListByFounded';
-import { YearAccuracy } from '@services/Db';
 import { metaLangs } from '@services/meta';
+import { YearAccuracy } from '@services/year';
+
+import BrandLink from '../../BrandLink';
 
 type DecadePageProps = PageProps<{
   decade: string;
@@ -51,7 +53,7 @@ export default async function DecadePage({
       <ul className="md:columns-2 lg:columns-3 xl:columns-4 space-y-2 mt-6">
         {brands.map(brand => (
           <li key={brand.id} className="flex gap-2">
-            <div className="leading-6">{brand.title}</div>
+            <BrandLink brand={brand} t={t} lng={lng} />
             {brand.year_founded_accuracy !== YearAccuracy.Century ? (
               <div className="text-sm leading-6 font-medium text-gray-500">
                 {brand.year_founded_accuracy === YearAccuracy.Year

@@ -1,14 +1,13 @@
-import { YearAccuracy, db } from '@services/Db';
-
-import { BrandType } from './types';
+import { db } from '@services/Db';
+import { YearAccuracy } from '@services/year';
 
 /**
  * Получить бренды, основанные в конкретное десятилетие или в столетие с неизвестным десятилетием.
  */
-export default async function getListByFounded(
-  decade: string,
-): Promise<BrandType[]> {
-  const q = db.brands.orderBy('title');
+export default async function getListByFounded(decade: string) {
+  const q = db.brands
+    .select(['id', 'title', 'alias', 'year_founded', 'year_founded_accuracy'])
+    .orderBy('title');
   if (decade === 'unknown') {
     q.whereNull('year_founded');
   } else if (decade[2] === 'x') {
@@ -27,5 +26,5 @@ export default async function getListByFounded(
     q.andWhere('year_founded_accuracy', '<>', YearAccuracy.Century);
   }
   const rows = await q;
-  return rows as BrandType[];
+  return rows;
 }

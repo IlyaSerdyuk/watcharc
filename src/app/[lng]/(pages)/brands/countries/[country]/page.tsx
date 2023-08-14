@@ -9,6 +9,8 @@ import getByCode from '@models/country/getByCode';
 import getCountryCodes from '@models/country/getCountryCodes';
 import { metaLangs } from '@services/meta';
 
+import BrandLink from '../../BrandLink';
+
 type CountryPageProps = PageProps<{
   country: string;
 }>;
@@ -60,7 +62,9 @@ export default async function CountryPage({
       <Title title={`${t('brands-by-country')}. ${country.title}`} />
       <ul className="md:columns-2 lg:columns-3 xl:columns-4 space-y-2 mt-6">
         {brands.map(brand => (
-          <li key={brand.id}>{brand.title}</li>
+          <li key={brand.id}>
+            <BrandLink brand={brand} t={t} lng={lng} />
+          </li>
         ))}
       </ul>
     </>

@@ -12,13 +12,6 @@ export const config = {
 const cookieName = 'i18next';
 
 export function middleware(request: NextRequest) {
-  if (
-    request.nextUrl.pathname.indexOf('icon') > -1 ||
-    request.nextUrl.pathname.indexOf('chrome') > -1
-  ) {
-    return NextResponse.next();
-  }
-
   let lng;
   if (request.cookies.has(cookieName)) {
     lng = acceptLanguage.get(request.cookies.get(cookieName)?.value);

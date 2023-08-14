@@ -1,14 +1,16 @@
 import { db } from '@services/Db';
 
 import { CountryType } from '../country/types';
+import { BrandList } from './types';
 
 /**
  * Получить бренды, связанные с конкретной страной.
  */
 export default async function getListByCountry(country: CountryType) {
   const rows = await db.brands
+    .select(['brands.id', 'brands.title', 'brands.alias'])
     .innerJoin('brands__countries AS bc', 'bc.brand_id', 'brands.id')
     .where('bc.country_id', '=', country.id)
     .orderBy('brands.title');
-  return rows;
+  return rows as BrandList;
 }

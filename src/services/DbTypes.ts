@@ -9,10 +9,20 @@ export interface DbBrandAlias {
 export interface DbBrand {
   id: number;
   title: string;
+  alternative_titles: string | null;
+  alias: string | null;
   website: string | null;
+  website_in_wayback: string | null;
   instagram: string | null;
   year_founded: number | null;
   year_founded_accuracy: 'year' | 'decade' | 'century' | null;
+  year_closed: number | null;
+  year_closed_accuracy: 'year' | 'decade' | 'century' | null;
+  address: string | null;
+  place_id: string | null;
+  phone: string | null;
+  email: string | null;
+  credibility: 'open-source' | 'retailer' | 'owner' | null;
 }
 
 export interface DbBrandCountry {
