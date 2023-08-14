@@ -6,6 +6,7 @@
   "parserOptions": {
     "project": "./tsconfig.json"
   },
+  "ignorePatterns": ["src/services/DbTypes.ts"],
   "overrides": [
     {
       "files": ["src/app/api/**/route.ts"],
