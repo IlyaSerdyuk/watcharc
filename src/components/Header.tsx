@@ -1,11 +1,11 @@
 import Link from 'next/link';
 
-import useTranslation from '@i18n/server';
+import translate from '@i18n/server';
 
 import HeaderLang from './HeaderLang';
 
 export default async function Header({ lng }: { lng: Languages }) {
-  const { t } = await useTranslation(lng);
+  const { t } = await translate(lng);
   return (
     <header>
       <nav

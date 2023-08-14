@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import useTranslation from '@i18n/server';
+import translate from '@i18n/server';
 
 interface SectionProps {
   lng: Languages;
@@ -11,7 +11,7 @@ export default async function SectionByCountry({
   lng,
   countries,
 }: SectionProps) {
-  const { t } = await useTranslation(lng);
+  const { t } = await translate(lng);
   return (
     <section className="py-6">
       <h2 className="pb-3 text-2xl font-bold leading-10 tracking-tight text-gray-700">

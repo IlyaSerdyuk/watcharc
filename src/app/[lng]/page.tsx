@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 import Header from '@components/Header';
-import useTranslation from '@i18n/server';
+import translate from '@i18n/server';
 import getStatistics from '@models/getStatistics';
 import { metaLangs } from '@services/meta';
 
@@ -16,7 +16,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Home({ params: { lng } }: PageProps) {
-  const { t } = await useTranslation(lng, 'home');
+  const { t } = await translate(lng, 'home');
   const stats = await getStatistics();
   return (
     <>

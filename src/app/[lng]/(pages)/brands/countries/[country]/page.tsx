@@ -1,9 +1,9 @@
-import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 
 import Breadcrumbs from '@components/Breadcrumbs';
 import Title from '@components/Title';
-import useTranslation from '@i18n/server';
+import translate from '@i18n/server';
 import getListByCountry from '@models/brand/getListByCountry';
 import getByCode from '@models/country/getByCode';
 import getCountryCodes from '@models/country/getCountryCodes';
@@ -25,8 +25,7 @@ export const dynamicParams = false;
 export async function generateMetadata({
   params: { lng, country: countryCode },
 }: CountryPageProps): Promise<Metadata | null> {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { t } = await useTranslation(lng);
+  const { t } = await translate(lng);
 
   const country = await getByCode(countryCode, lng);
   if (!country) {
@@ -50,7 +49,7 @@ export default async function CountryPage({
   }
 
   const brands = await getListByCountry(country);
-  const { t } = await useTranslation(lng);
+  const { t } = await translate(lng);
 
   return (
     <>

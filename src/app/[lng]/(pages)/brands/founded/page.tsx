@@ -1,16 +1,17 @@
-import Link from 'next/link';
 import type { Metadata } from 'next';
+import Link from 'next/link';
 
 import Breadcrumbs from '@components/Breadcrumbs';
 import Title from '@components/Title';
 import centuryHelper from '@i18n/centuryHelper';
-import useTranslation from '@i18n/server';
+import translate from '@i18n/server';
 import getFoundedIndex from '@models/brand/getFoundedIndex';
 import { metaLangs } from '@services/meta';
 
-export async function generateMetadata({ params: { lng } }: PageProps): Promise<Metadata> {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { t } = await useTranslation(lng);
+export async function generateMetadata({
+  params: { lng },
+}: PageProps): Promise<Metadata> {
+  const { t } = await translate(lng);
   return {
     title: t('brands-founded'),
     alternates: {
@@ -27,7 +28,7 @@ const urlHelper = (lng: Languages, century: string, decade: string) => {
 };
 
 export default async function FoundedIndexPage({ params: { lng } }: PageProps) {
-  const { t } = await useTranslation(lng);
+  const { t } = await translate(lng);
   const items = await getFoundedIndex();
   return (
     <>

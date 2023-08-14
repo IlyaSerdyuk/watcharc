@@ -2,7 +2,7 @@ import { dir } from 'i18next';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
-import useTranslation from '@i18n/server';
+import translate from '@i18n/server';
 import { languages } from '@i18n/settings';
 
 import Footer from './Footer';
@@ -15,7 +15,7 @@ export async function generateMetadata({
   params: { lng },
 }: PageProps): Promise<Metadata> {
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { t } = await useTranslation(lng);
+  const { t } = await translate(lng);
   return {
     title: 'WatchArc',
     description: t('meta-description'),

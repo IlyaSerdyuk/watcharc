@@ -4,10 +4,7 @@ import i18next from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import resourcesToBackend from 'i18next-resources-to-backend';
 import { useEffect } from 'react';
-import {
-  initReactI18next,
-  useTranslation as useTranslationOrg,
-} from 'react-i18next';
+import { initReactI18next, useTranslation as translator } from 'react-i18next';
 
 import { getOptions, languages } from './settings';
 
@@ -31,12 +28,12 @@ i18next
     preload: runsOnServerSide ? languages : [],
   });
 
-export default function useTranslation(
+export default function translate(
   lng: Languages,
-  ns: string,
+  ns: string | string[],
   options = {},
 ) {
-  const ret = useTranslationOrg(ns, options);
+  const ret = translator(ns, options);
   const { i18n } = ret;
   if (runsOnServerSide && lng && i18n.resolvedLanguage !== lng) {
     i18n.changeLanguage(lng);

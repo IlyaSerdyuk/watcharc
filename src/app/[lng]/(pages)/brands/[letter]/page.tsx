@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
+
 import Breadcrumbs from '@components/Breadcrumbs';
 import Title from '@components/Title';
-import useTranslation from '@i18n/server';
+import translate from '@i18n/server';
 import getListByFirstLetter from '@models/brand/getListByFirstLetter';
 import { BRAND_FIRST_NUMBER } from '@models/brand/types';
 import { metaLangs } from '@services/meta';
@@ -19,8 +20,7 @@ export const dynamicParams = false;
 export async function generateMetadata({
   params: { lng, letter },
 }: LetterPageProps): Promise<Metadata> {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { t } = await useTranslation(lng);
+  const { t } = await translate(lng);
   return {
     title:
       letter === BRAND_FIRST_NUMBER
@@ -35,7 +35,7 @@ export async function generateMetadata({
 export default async function LetterPage({
   params: { lng, letter },
 }: LetterPageProps) {
-  const { t } = await useTranslation(lng);
+  const { t } = await translate(lng);
   const brands = await getListByFirstLetter(letter);
   return (
     <>

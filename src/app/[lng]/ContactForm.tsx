@@ -4,7 +4,7 @@ import i18next from 'i18next';
 import { FormEvent, useCallback, useState } from 'react';
 
 import { FailAlert, LoadingAlert, SuccessAlert } from '@components/Alerts';
-import useTranslation from '@i18n/client';
+import translate from '@i18n/client';
 
 const enum FormStatus {
   Wait = 0,
@@ -32,7 +32,7 @@ function Message({ status, t }: { status: FormStatus; t: typeof i18next.t }) {
 }
 
 export default function ContactForm({ lng }: { lng: Languages }) {
-  const { t } = useTranslation(lng, 'home');
+  const { t } = translate(lng, 'home');
   const [status, setStatus] = useState(FormStatus.Wait);
 
   const handler = useCallback(async (event: FormEvent) => {

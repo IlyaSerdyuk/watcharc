@@ -1,7 +1,7 @@
-import useTranslation from '@i18n/server';
+import translate from '@i18n/server';
 
 export default async function Footer({ lng }: { lng: Languages }) {
-  const { t } = await useTranslation(lng);
+  const { t } = await translate(lng);
   return (
     <footer className="bg-white" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">

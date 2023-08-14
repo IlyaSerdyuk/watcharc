@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 import Breadcrumbs from '@components/Breadcrumbs';
 import Title from '@components/Title';
 import centuryHelper from '@i18n/centuryHelper';
-import useTranslation from '@i18n/server';
+import translate from '@i18n/server';
 import getListByFounded from '@models/brand/getListByFounded';
 import { YearAccuracy } from '@services/Db';
 import { metaLangs } from '@services/meta';
@@ -24,8 +24,7 @@ function title(t: TFunction, lng: Languages, decade: string) {
 export async function generateMetadata({
   params: { lng, decade },
 }: DecadePageProps): Promise<Metadata> {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { t } = await useTranslation(lng);
+  const { t } = await translate(lng);
   return {
     title: title(t, lng, decade),
     alternates: {
@@ -37,7 +36,7 @@ export async function generateMetadata({
 export default async function DecadePage({
   params: { lng, decade },
 }: DecadePageProps) {
-  const { t } = await useTranslation(lng);
+  const { t } = await translate(lng);
   const brands = await getListByFounded(decade);
   return (
     <>

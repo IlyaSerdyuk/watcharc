@@ -1,7 +1,7 @@
 import { ChevronRightIcon, HomeIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 
-import useTranslation from '@i18n/server';
+import translate from '@i18n/server';
 
 export interface BreadcrumbsPage {
   title: string;
@@ -14,7 +14,7 @@ interface BreadcrumbsProps {
 }
 
 export default async function Breadcrumbs({ lng, pages }: BreadcrumbsProps) {
-  const { t } = await useTranslation(lng);
+  const { t } = await translate(lng);
   return (
     <nav className="flex" aria-label="Breadcrumb">
       <ol className="flex items-center space-x-4">
