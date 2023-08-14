@@ -1,8 +1,19 @@
+import type { Metadata } from 'next';
+
 import Header from '@components/Header';
 import useTranslation from '@i18n/server';
 import getStatistics from '@models/getStatistics';
+import { metaLangs } from '@services/meta';
 
 import ContactForm from './ContactForm';
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    alternates: {
+      languages: metaLangs(''),
+    },
+  };
+}
 
 export default async function Home({ params: { lng } }: PageProps) {
   const { t } = await useTranslation(lng, 'home');

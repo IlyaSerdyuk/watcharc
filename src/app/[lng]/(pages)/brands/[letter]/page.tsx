@@ -1,8 +1,10 @@
+import type { Metadata } from 'next';
 import Breadcrumbs from '@components/Breadcrumbs';
 import Title from '@components/Title';
 import useTranslation from '@i18n/server';
 import getListByFirstLetter from '@models/brand/getListByFirstLetter';
 import { BRAND_FIRST_NUMBER } from '@models/brand/types';
+import { metaLangs } from '@services/meta';
 
 type LetterPageProps = PageProps<{
   letter: string;
@@ -16,7 +18,7 @@ export const dynamicParams = false;
 
 export async function generateMetadata({
   params: { lng, letter },
-}: LetterPageProps) {
+}: LetterPageProps): Promise<Metadata> {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const { t } = await useTranslation(lng);
   return {
@@ -24,6 +26,9 @@ export async function generateMetadata({
       letter === BRAND_FIRST_NUMBER
         ? t('brands-by-first-number')
         : t('brands-by-first-letter', { letter: letter.toUpperCase() }),
+    alternates: {
+      languages: metaLangs(`/brands/${letter}`),
+    },
   };
 }
 

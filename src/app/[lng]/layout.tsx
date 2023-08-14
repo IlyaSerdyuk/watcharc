@@ -1,4 +1,5 @@
 import { dir } from 'i18next';
+import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
 import useTranslation from '@i18n/server';
@@ -10,7 +11,9 @@ import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export async function generateMetadata({ params: { lng } }: PageProps) {
+export async function generateMetadata({
+  params: { lng },
+}: PageProps): Promise<Metadata> {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const { t } = await useTranslation(lng);
   return {

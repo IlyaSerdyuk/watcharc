@@ -1,4 +1,5 @@
 import type { TFunction } from 'i18next';
+import type { Metadata } from 'next';
 
 import Breadcrumbs from '@components/Breadcrumbs';
 import Title from '@components/Title';
@@ -6,6 +7,7 @@ import centuryHelper from '@i18n/centuryHelper';
 import useTranslation from '@i18n/server';
 import getListByFounded from '@models/brand/getListByFounded';
 import { YearAccuracy } from '@services/Db';
+import { metaLangs } from '@services/meta';
 
 type DecadePageProps = PageProps<{
   decade: string;
@@ -21,11 +23,14 @@ function title(t: TFunction, lng: Languages, decade: string) {
 
 export async function generateMetadata({
   params: { lng, decade },
-}: DecadePageProps) {
+}: DecadePageProps): Promise<Metadata> {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const { t } = await useTranslation(lng);
   return {
     title: title(t, lng, decade),
+    alternates: {
+      languages: metaLangs(`/brands/founded/${decade}`),
+    },
   };
 }
 

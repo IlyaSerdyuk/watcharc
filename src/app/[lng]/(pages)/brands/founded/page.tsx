@@ -1,16 +1,21 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
 
 import Breadcrumbs from '@components/Breadcrumbs';
 import Title from '@components/Title';
 import centuryHelper from '@i18n/centuryHelper';
 import useTranslation from '@i18n/server';
 import getFoundedIndex from '@models/brand/getFoundedIndex';
+import { metaLangs } from '@services/meta';
 
-export async function generateMetadata({ params: { lng } }: PageProps) {
+export async function generateMetadata({ params: { lng } }: PageProps): Promise<Metadata> {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const { t } = await useTranslation(lng);
   return {
     title: t('brands-founded'),
+    alternates: {
+      languages: metaLangs('/brands/founded'),
+    },
   };
 }
 

@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation';
+import type { Metadata } from 'next';
 
 import Breadcrumbs from '@components/Breadcrumbs';
 import Title from '@components/Title';
@@ -6,6 +7,7 @@ import useTranslation from '@i18n/server';
 import getListByCountry from '@models/brand/getListByCountry';
 import getByCode from '@models/country/getByCode';
 import getCountryCodes from '@models/country/getCountryCodes';
+import { metaLangs } from '@services/meta';
 
 type CountryPageProps = PageProps<{
   country: string;
@@ -22,7 +24,7 @@ export const dynamicParams = false;
 
 export async function generateMetadata({
   params: { lng, country: countryCode },
-}: CountryPageProps) {
+}: CountryPageProps): Promise<Metadata | null> {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const { t } = await useTranslation(lng);
 
@@ -33,6 +35,9 @@ export async function generateMetadata({
 
   return {
     title: `${country.title}. ${t('brands')}`,
+    alternates: {
+      languages: metaLangs(`/brands/${countryCode}`),
+    },
   };
 }
 
