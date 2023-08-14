@@ -5,7 +5,7 @@ export default function DefaultLayout({
   params: { lng },
 }: {
   children: React.ReactNode;
-  params: { lng: string };
+  params: { lng: Languages };
 }) {
   return (
     <>

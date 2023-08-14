@@ -4,7 +4,7 @@ import useTranslation from '@i18n/server';
 
 import HeaderLang from './HeaderLang';
 
-export default async function Header({ lng }: { lng: string }) {
+export default async function Header({ lng }: { lng: Languages }) {
   const { t } = await useTranslation(lng);
   return (
     <header>

@@ -5,7 +5,7 @@ import useTranslation from '@i18n/server';
 import { BRAND_FIRST_NUMBER } from '@models/brand/types';
 
 interface SectionProps {
-  lng: string;
+  lng: Languages;
   alphabet: Record<string, number>;
 }
 

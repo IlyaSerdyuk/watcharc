@@ -7,7 +7,7 @@ import { CountryType } from './types';
  */
 export default async function getByCode(
   code: string,
-  lng: string,
+  lng: Languages,
 ): Promise<CountryType | undefined> {
   const row = await db.countries
     .select({ title: `title_${lng}` })

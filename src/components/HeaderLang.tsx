@@ -12,7 +12,7 @@ const languages: Record<Languages, string> = {
   ru: 'Русский',
 };
 
-export default function HeaderLang({ lng }: { lng: string }) {
+export default function HeaderLang({ lng }: { lng: Languages }) {
   const pathname = usePathname().substring(3);
   return (
     <Popover.Group className="flex flex-1 justify-end">

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import useTranslation from '@i18n/server';
 
 interface SectionProps {
-  lng: string;
+  lng: Languages;
   countries: any[];
 }
 
