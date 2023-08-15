@@ -1,7 +1,7 @@
 import i18next from 'i18next';
 import Link from 'next/link';
 
-import { BrandType } from '@models/brand/types';
+import type { BrandType } from '@models/brand/types';
 
 export default function BrandLink({
   brand,

@@ -1,6 +1,7 @@
 import { db } from '@services/Db';
 
-import { BRAND_FIRST_NUMBER, BrandList } from './types';
+import type { BrandList } from './types';
+import { BRAND_FIRST_NUMBER } from './types';
 
 /**
  * Получить бренды, начинающиеся на конкретную букву или любое число.

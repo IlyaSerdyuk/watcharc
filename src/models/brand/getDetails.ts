@@ -1,7 +1,7 @@
 import { db } from '@services/Db';
 
-import { CountryType } from '../country/types';
-import { BrandType } from './types';
+import type { CountryType } from '../country/types';
+import type { BrandType } from './types';
 
 type Type = BrandType & {
   countries: Pick<CountryType, 'title' | 'code'>[];

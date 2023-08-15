@@ -1,6 +1,6 @@
 import { db } from '@services/Db';
 
-import { CountryType } from './types';
+import type { CountryType } from './types';
 
 /**
  * Получить страну по коду.

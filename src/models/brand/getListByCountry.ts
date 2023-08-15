@@ -1,7 +1,7 @@
 import { db } from '@services/Db';
 
-import { CountryType } from '../country/types';
-import { BrandList } from './types';
+import type { CountryType } from '../country/types';
+import type { BrandList } from './types';
 
 /**
  * Получить бренды, связанные с конкретной страной.

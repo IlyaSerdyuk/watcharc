@@ -1,7 +1,8 @@
 'use client';
 
 import i18next from 'i18next';
-import { FormEvent, useCallback, useState } from 'react';
+import type { FormEvent } from 'react';
+import { useCallback, useState } from 'react';
 
 import { FailAlert, LoadingAlert, SuccessAlert } from '@components/Alerts';
 import translate from '@i18n/client';

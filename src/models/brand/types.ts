@@ -1,5 +1,5 @@
-import { DbBrand } from '@services/DbTypes';
-import { YearAccuracy } from '@services/year';
+import type { DbBrand } from '@services/DbTypes';
+import type { YearAccuracy } from '@services/year';
 
 export interface BrandType extends DbBrand {
   year_founded_accuracy: YearAccuracy;

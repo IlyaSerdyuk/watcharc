@@ -1,6 +1,7 @@
 {
   "extends": ["next/core-web-vitals", "airbnb", "airbnb-typescript", "prettier"],
   "rules": {
+    "@typescript-eslint/consistent-type-imports": "error",
     "react/react-in-jsx-scope": "off"
   },
   "parserOptions": {

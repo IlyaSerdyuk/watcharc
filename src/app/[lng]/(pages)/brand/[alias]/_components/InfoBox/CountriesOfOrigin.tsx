@@ -2,7 +2,7 @@ import { FlagIcon } from '@heroicons/react/24/outline';
 import type { TFunction } from 'i18next';
 import Link from 'next/link';
 
-import { CountryType } from '@models/country/types';
+import type { CountryType } from '@models/country/types';
 
 import Item from './Item';
 

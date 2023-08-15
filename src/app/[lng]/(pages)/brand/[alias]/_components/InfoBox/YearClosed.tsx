@@ -3,7 +3,8 @@ import type { TFunction } from 'i18next';
 import Link from 'next/link';
 
 import yearUrlHelper from '@models/brand/yearUrlHelper';
-import { YearAccuracy, formatYear } from '@services/year';
+import type { YearAccuracy } from '@services/year';
+import { formatYear } from '@services/year';
 
 import Item from './Item';
 
