@@ -14,7 +14,6 @@ const inter = Inter({ subsets: ['latin'] });
 export async function generateMetadata({
   params: { lng },
 }: PageProps): Promise<Metadata> {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
   const { t } = await translate(lng);
   return {
     title: 'WatchArc',
@@ -35,6 +34,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang={lng} dir={dir(lng)}>
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="32x32" />
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/apple-icon.png" />
+        <link rel="manifest" href="/manifest.webmanifest" />
+      </head>
       <body className={inter.className}>
         {children}
         <Footer lng={lng} />

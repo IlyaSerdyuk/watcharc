@@ -7,12 +7,25 @@ import { fallbackLng, languages } from '@i18n/settings';
 acceptLanguage.languages(languages);
 
 export const config = {
-  matcher: ['/((?!api|_next/static|_next/image|assets|favicon.ico|sw.js).*)'],
+  matcher: ['/((?!api|_next/static|_next/image).*)'],
 };
 
 const cookieName = 'i18next';
 
+const exclusionList = [
+  '/favicon.ico',
+  '/icon.svg',
+  '/icon-192.png',
+  '/icon-512.png',
+  '/apple-icon.png',
+  '/manifest.webmanifest',
+];
+
 export function middleware(request: NextRequest) {
+  if (exclusionList.includes(request.nextUrl.pathname)) {
+    return NextResponse.next();
+  }
+
   let lng;
   if (request.cookies.has(cookieName)) {
     lng = acceptLanguage.get(request.cookies.get(cookieName)?.value);
