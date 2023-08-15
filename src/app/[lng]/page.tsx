@@ -2,10 +2,17 @@ import type { Metadata } from 'next';
 
 import Header from '@components/Header';
 import translate from '@i18n/server';
+import { languages } from '@i18n/settings';
 import getStatistics from '@models/getStatistics';
 import { metaLangs } from '@services/meta';
 
 import ContactForm from './ContactForm';
+
+export async function generateStaticParams() {
+  return languages.map(lng => ({ lng }));
+}
+
+export const dynamicParams = false;
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
