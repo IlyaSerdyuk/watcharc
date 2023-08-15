@@ -1,6 +1,6 @@
 'use client';
 
-import i18next from 'i18next';
+import type { TFunction } from 'i18next';
 import type { FormEvent } from 'react';
 import { useCallback, useState } from 'react';
 
@@ -14,7 +14,7 @@ const enum FormStatus {
   Complete = 3,
 }
 
-function Message({ status, t }: { status: FormStatus; t: typeof i18next.t }) {
+function Message({ status, t }: { status: FormStatus; t: TFunction }) {
   switch (status) {
     case FormStatus.Sending:
       return <LoadingAlert title={t('contact.sending')} />;

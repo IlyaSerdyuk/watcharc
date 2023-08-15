@@ -1,4 +1,4 @@
-import i18next from 'i18next';
+import type { TFunction } from 'i18next';
 import Link from 'next/link';
 
 import type { BrandType } from '@models/brand/types';
@@ -9,7 +9,7 @@ export default function BrandLink({
   lng,
 }: {
   brand: Pick<BrandType, 'alias' | 'title'>;
-  t: typeof i18next.t;
+  t: TFunction;
   lng: Languages;
 }) {
   return brand.alias ? (
