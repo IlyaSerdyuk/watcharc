@@ -5,6 +5,7 @@ import Breadcrumbs from '@components/Breadcrumbs';
 import Title from '@components/Title';
 import centuryHelper from '@i18n/centuryHelper';
 import translate from '@i18n/server';
+import decadeUrlHelper from '@models/brand/decadeUrlHelper';
 import getFoundedIndex from '@models/brand/getFoundedIndex';
 import { metaLangs } from '@services/meta';
 
@@ -19,13 +20,6 @@ export async function generateMetadata({
     },
   };
 }
-
-const urlHelper = (lng: Languages, century: string, decade: string) => {
-  const prefix = '/brands/founded/';
-  const path =
-    decade === 'unknown' ? `${century}xx` : `${decade.substring(0, 3)}x`;
-  return `${prefix}${path}`;
-};
 
 export default async function FoundedIndexPage({ params: { lng } }: PageProps) {
   const { t } = await translate(lng);
@@ -57,7 +51,7 @@ export default async function FoundedIndexPage({ params: { lng } }: PageProps) {
                   {Object.entries(decades).map(([decade, number]) => (
                     <Link
                       key={decade}
-                      href={urlHelper(lng, century, decade)}
+                      href={decadeUrlHelper(century, decade, lng)}
                       className="bg-gray-400/5 hover:bg-gray-900/5 focus:bg-gray-900/5 w-28 px-6 py-4 space-y-2 text-center"
                     >
                       <div className="text-lg font-semibold tracking-tight text-gray-900">

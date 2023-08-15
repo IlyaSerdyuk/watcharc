@@ -19,6 +19,7 @@ const exclusionList = [
   '/icon-512.png',
   '/apple-icon.png',
   '/manifest.webmanifest',
+  '/sitemap.xml',
 ];
 
 export function middleware(request: NextRequest) {
