@@ -46,8 +46,7 @@ async function getBrandsMap() {
   // Индекс брендов по году основания
   rows.push({ url: 'https://watcharc.org/brands/founded' });
   Object.entries(founded).forEach(([century, decades]) => {
-    Object.entries(decades).map(([decade]) => {
-      // eslint-disable-line array-callback-return
+    Object.entries(decades).forEach(([decade]) => {
       rows.push({
         url: `https://watcharc.org${decadeUrlHelper(century, decade)}`,
       });

@@ -11,7 +11,7 @@ export const BRAND_FIRST_NUMBER = '8';
 export type BrandList = {
   id: number;
   title: string;
-  alias?: string;
+  alias: string | null;
 }[];
 
 export interface BrandLinkType extends DbBrandLink {}
