@@ -1,4 +1,4 @@
-import type { DbBrand } from '@services/DbTypes';
+import type { DbBrand, DbBrandLink } from '@services/DbTypes';
 import type { YearAccuracy } from '@services/year';
 
 export interface BrandType extends DbBrand {
@@ -13,3 +13,5 @@ export type BrandList = {
   title: string;
   alias?: string;
 }[];
+
+export interface BrandLinkType extends DbBrandLink {}

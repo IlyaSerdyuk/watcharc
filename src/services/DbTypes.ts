@@ -6,11 +6,19 @@ export interface DbBrandAlias {
   title: string;
 }
 
+export interface DbBrandLink {
+  id: number;
+  brand_id: number;
+  type: string;
+  url: string;
+}
+
 export interface DbBrand {
   id: number;
   title: string;
   alternative_titles: string | null;
   alias: string | null;
+  has_page: number | null;
   website: string | null;
   website_in_wayback: string | null;
   instagram: string | null;
@@ -54,6 +62,9 @@ export class DB {
   constructor(public readonly knex: Knex) {}
   get brandAliases() {
     return this.knex<DbBrandAlias>('brand_aliases');
+  }
+  get brandLinks() {
+    return this.knex<DbBrandLink>('brand_links');
   }
   get brands() {
     return this.knex<DbBrand>('brands');

@@ -1,11 +1,12 @@
 import { db } from '@services/Db';
 
 import type { CountryType } from '../country/types';
-import type { BrandType } from './types';
+import type { BrandLinkType, BrandType } from './types';
 
 type Type = BrandType & {
   countries: Pick<CountryType, 'title' | 'code'>[];
   countriesOfOrigin: Pick<CountryType, 'title' | 'code'>[];
+  links: BrandLinkType[];
 };
 
 export default async function getByCode(
@@ -29,10 +30,14 @@ export default async function getByCode(
       'countries.id',
     )
     .where('brands__countries.brand_id', '=', brand.id);
+  const links = await db.brandLinks
+    .where('brand_id', '=', brand.id)
+    .orderBy('type');
 
   return {
     ...(brand as BrandType),
     countries: countries.filter(({ type }) => type === 'current'),
     countriesOfOrigin: countries.filter(({ type }) => type === 'founded'),
+    links,
   };
 }
