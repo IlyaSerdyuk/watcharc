@@ -1,9 +1,10 @@
 'use client';
 
-import Title from "@components/Title";
-import translate from "@i18n/client";
-import Link from "next/link";
-import { useParams } from "next/navigation";
+import Link from 'next/link';
+import { useParams } from 'next/navigation';
+
+import Title from '@components/Title';
+import translate from '@i18n/client';
 
 export default function NotFound() {
   const { lng } = useParams();
@@ -15,5 +16,5 @@ export default function NotFound() {
         {t('go-to-index')}
       </Link>
     </>
-  )
+  );
 }

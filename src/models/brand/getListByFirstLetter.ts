@@ -8,7 +8,12 @@ import { BRAND_FIRST_NUMBER } from './types';
  */
 export default async function getListByFirstLetter(letter: string) {
   const q = db.brandAliases
-    .select('brand_aliases.id', 'brand_aliases.title', 'brand_aliases.qualification', 'brands.alias')
+    .select(
+      'brand_aliases.id',
+      'brand_aliases.title',
+      'brand_aliases.qualification',
+      'brands.alias',
+    )
     .innerJoin('brands', 'brands.id', 'brand_aliases.brand_id')
     .orderBy('brand_aliases.title');
   const rows = await (letter === BRAND_FIRST_NUMBER
