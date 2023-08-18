@@ -18,5 +18,7 @@
   "brand-info-in-validate": "Information is being verified and will be available soon.",
   "century": "century",
   "footer": "Footer",
-  "privacy-info": "We do not collect any data that can identify you. We use cookies only to save the language you chose last time."
+  "privacy-info": "We do not collect any data that can identify you. We use cookies only to save the language you chose last time.",
+  "not-found": "Page not found",
+  "go-to-home": "Go to home page"
 }
