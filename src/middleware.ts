@@ -35,11 +35,12 @@ export function middleware(request: NextRequest) {
   if (!lng) lng = acceptLanguage.get(request.headers.get('Accept-Language'));
   if (!lng) lng = fallbackLng;
 
-  // Redirect if lng in path is not supported
-  if (
-    !languages.some(loc => request.nextUrl.pathname.startsWith(`/${loc}`)) &&
-    !request.nextUrl.pathname.startsWith('/_next')
-  ) {
+  const lngInPath = languages.some(loc => {
+    const { pathname } = request.nextUrl;
+    return pathname === `/${loc}` || pathname.startsWith(`/${loc}/`);
+  });
+
+  if (!lngInPath && !request.nextUrl.pathname.startsWith('/_next')) {
     return NextResponse.redirect(
       new URL(`/${lng}${request.nextUrl.pathname}`, request.url),
     );
