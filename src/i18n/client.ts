@@ -30,7 +30,7 @@ i18next
 
 export default function translate(
   lng: Languages,
-  ns: string | string[],
+  ns?: string | string[],
   options = {},
 ) {
   const ret = translator(ns, options);
