@@ -56,6 +56,11 @@ export default async function LetterPage({
         {brands.map(brand => (
           <li key={brand.id}>
             <BrandLink brand={brand} t={t} lng={lng} />
+            {brand.qualification && (
+              <span className="ml-2 text-sm text-gray-600">
+                ({brand.qualification})
+              </span>
+            )}
           </li>
         ))}
       </ul>

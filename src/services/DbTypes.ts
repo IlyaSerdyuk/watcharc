@@ -4,6 +4,7 @@ export interface DbBrandAlias {
   id: number;
   brand_id: number;
   title: string;
+  qualification: string | null;
 }
 
 export interface DbBrandLink {

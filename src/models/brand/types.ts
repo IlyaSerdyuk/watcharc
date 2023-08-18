@@ -11,6 +11,7 @@ export const BRAND_FIRST_NUMBER = '8';
 export type BrandList = {
   id: number;
   title: string;
+  qualification?: string;
   alias: string | null;
 }[];
 
