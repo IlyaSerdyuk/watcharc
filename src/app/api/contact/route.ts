@@ -10,7 +10,7 @@ export async function POST(request: NextRequest) {
       throw Error('not message');
     }
     saveMessage({ message, email: email || undefined });
-    return NextResponse.json({ status: 'fail' });
+    return NextResponse.json({ status: 'success' });
   } catch (e) {
     return NextResponse.json({ status: 'fail' });
   }
