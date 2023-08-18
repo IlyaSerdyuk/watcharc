@@ -10,5 +10,7 @@
   "list-of-references": "List of references",
   "credibility-open-source": "The information is collected from open sources, awaiting confirmation and additions from brand representatives.",
   "credibility-retailer": "Information provided by the brand retailer.",
-  "credibility-owner": "Information provided by the official representative of the brand."
+  "credibility-owner": "Information provided by the official representative of the brand.",
+  "not-found": "Brand not found",
+  "go-to-index": "Go to brand index"
 }
