@@ -9,7 +9,7 @@ import getByCode from '@models/country/getByCode';
 import getCountryCodes from '@models/country/getCountryCodes';
 import { metaLangs } from '@services/meta';
 
-import BrandLink from '../../BrandLink';
+import BrandLink from '../../_components/BrandLink';
 
 type CountryPageProps = PageProps<{
   country: string;

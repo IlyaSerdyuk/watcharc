@@ -7,7 +7,7 @@ import getListByFirstLetter from '@models/brand/getListByFirstLetter';
 import { BRAND_FIRST_NUMBER } from '@models/brand/types';
 import { metaLangs } from '@services/meta';
 
-import BrandLink from '../BrandLink';
+import BrandLink from '../_components/BrandLink';
 
 type LetterPageProps = PageProps<{
   letter: string;

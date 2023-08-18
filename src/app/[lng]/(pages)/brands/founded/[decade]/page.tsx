@@ -9,7 +9,7 @@ import getListByFounded from '@models/brand/getListByFounded';
 import { metaLangs } from '@services/meta';
 import { YearAccuracy } from '@services/year';
 
-import BrandLink from '../../BrandLink';
+import BrandLink from '../../_components/BrandLink';
 
 type DecadePageProps = PageProps<{
   decade: string;

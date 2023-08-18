@@ -6,9 +6,9 @@ import getAlphabetIndex from '@models/brand/getAlphabetIndex';
 import getIndex from '@models/country/getIndex';
 import { metaLangs } from '@services/meta';
 
-import SectionByCountry from './SectionByCountry';
-import SectionByFirstLetter from './SectionByFirstLetter';
-import SectionByOther from './SectionByOther';
+import SectionByCountry from './_components/SectionByCountry';
+import SectionByFirstLetter from './_components/SectionByFirstLetter';
+import SectionByOther from './_components/SectionByOther';
 
 export async function generateMetadata({
   params: { lng },
