@@ -1,5 +1,6 @@
 import type { TFunction } from 'i18next';
 import type { Metadata } from 'next';
+import { redirect } from 'next/navigation';
 
 import Breadcrumbs from '@components/Breadcrumbs';
 import Title from '@components/Title';
@@ -26,6 +27,10 @@ function title(t: TFunction, lng: Languages, decade: string) {
 export async function generateMetadata({
   params: { lng, decade },
 }: DecadePageProps): Promise<Metadata> {
+  if (!/^[12][0-9][0-9x]x$/.test(decade)) {
+    redirect(`/${lng}/brands/founded`);
+  }
+
   const { t } = await translate(lng);
   return {
     title: title(t, lng, decade),
