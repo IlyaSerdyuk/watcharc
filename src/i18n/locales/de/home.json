@@ -1,0 +1,25 @@
+{
+  "title": "Der größte Katalog moderner Uhrenmarken",
+  "number": "{{value, number}}",
+  "brands_one": "marke",
+  "brands_few": "marken",
+  "countries_one": "land",
+  "countries_few": "länder",
+  "import-sources": "Die Informationen für die Website wurden aus offenen Quellen gesammelt – wir haben etwa zweihundert offene Kataloge großer Online-Shops, Enzyklopädien, Foren und Websites von Uhrenliebhabern sowie Websites und soziale Netzwerke aller vertretenen Marken untersucht.",
+  "import-status": "Um alle Daten zu bestätigen, bauen wir nun die Kommunikation mit offiziellen Vertretern von Marken, Archiven und Museen auf.",
+  "contact": {
+    "title": "Schreib uns",
+    "call-1": "Kennen Sie eine Marke, die wir nicht haben?",
+    "call-2": "Oder möchten Sie die von uns bereitgestellten Informationen ergänzen?",
+    "call-3": "Oder sind Sie vielleicht der offizielle Vertreter der Marke?",
+    "call-4": "Schreib uns! Wir warten auf Ihre Nachrichten!",
+    "message": "Nachricht",
+    "email": "E-Mail",
+    "email-motivation": "Bitte geben Sie an, ob Sie unsere Antwort erhalten möchten.",
+    "send": "Senden",
+    "answer-time": "Durchschnittliche Antwortzeit – 1 Woche.",
+    "sending": "Die Nachricht wird gesendet\u2026",
+    "successfully": "Danke für deine Nachricht!",
+    "fail": "Es ist ein Fehler aufgetreten und wir haben Ihre Nachricht nicht erhalten. Bitte versuch es später."
+  }
+}

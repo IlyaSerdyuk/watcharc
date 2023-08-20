@@ -52,6 +52,8 @@ export default function centuryHelper(lng: Languages, century: number) {
   switch (lng) {
     case 'ru':
       return convertArabicToRoman(century);
+    case 'de':
+      return `${century}.`;
     case 'en':
       return ordinalSuffixOf(century);
     default:

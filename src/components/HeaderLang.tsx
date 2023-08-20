@@ -9,6 +9,7 @@ import React, { Fragment } from 'react';
 
 const languages: Record<Languages, string> = {
   en: 'English',
+  de: 'Deutsch',
   ru: 'Русский',
 };
 
