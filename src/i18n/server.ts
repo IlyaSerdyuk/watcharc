@@ -4,7 +4,7 @@ import { createInstance } from 'i18next';
 import resourcesToBackend from 'i18next-resources-to-backend';
 import { initReactI18next } from 'react-i18next/initReactI18next';
 
-import { getOptions } from './settings';
+import { expandI18n, getOptions } from './settings';
 
 const initI18next = async (lng: Languages, ns?: string | string[]) => {
   const i18nInstance = createInstance();
@@ -17,6 +17,7 @@ const initI18next = async (lng: Languages, ns?: string | string[]) => {
       ),
     )
     .init(getOptions(lng, ns));
+  expandI18n(i18nInstance);
   return i18nInstance;
 };
 

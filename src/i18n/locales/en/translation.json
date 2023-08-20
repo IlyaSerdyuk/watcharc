@@ -12,11 +12,14 @@
   "brands-by-country": "Brands by country",
   "brands-by-founded": {
     "decade": "Brands founded in the {{decade}}s",
-    "century": "Brands founded in the {{century}} century"
+    "century": "Brands founded in the {{century, century}} century"
   },
   "brands-founded": "Brands by year of foundation",
   "brand-info-in-validate": "Information is being verified and will be available soon.",
-  "century": "century",
+  "century": {
+    "number": "{{value, century}}",
+    "dimension": "century"
+  },
   "footer": "Footer",
   "privacy-info": "We do not collect any data that can identify you. We use cookies only to save the language you chose last time.",
   "not-found": "Page not found",

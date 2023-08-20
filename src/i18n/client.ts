@@ -6,7 +6,7 @@ import resourcesToBackend from 'i18next-resources-to-backend';
 import { useEffect } from 'react';
 import { initReactI18next, useTranslation as translator } from 'react-i18next';
 
-import { getOptions, languages } from './settings';
+import { expandI18n, getOptions, languages } from './settings';
 
 const runsOnServerSide = typeof window === 'undefined';
 
@@ -27,6 +27,7 @@ i18next
     },
     preload: runsOnServerSide ? languages : [],
   });
+expandI18n(i18next);
 
 export default function translate(
   lng: Languages,

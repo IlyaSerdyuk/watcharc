@@ -3,7 +3,6 @@ import Link from 'next/link';
 
 import Breadcrumbs from '@components/Breadcrumbs';
 import Title from '@components/Title';
-import centuryHelper from '@i18n/centuryHelper';
 import translate from '@i18n/server';
 import decadeUrlHelper from '@models/brand/decadeUrlHelper';
 import getFoundedIndex from '@models/brand/getFoundedIndex';
@@ -41,10 +40,10 @@ export default async function FoundedIndexPage({ params: { lng } }: PageProps) {
               >
                 <div className="py-2.5">
                   <div className="text-3xl font-medium leading-10 tracking-tight text-gray-900">
-                    {centuryHelper(lng, Number(century) + 1)}
+                    {t('century.number', { value: Number(century) + 1 })}
                   </div>
                   <div className="text font-medium leading-6 text-gray-500">
-                    {t('century')}
+                    {t('century.dimension')}
                   </div>
                 </div>
                 <div className="flex-1 flex flex-wrap gap-2">

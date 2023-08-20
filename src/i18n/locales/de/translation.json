@@ -12,11 +12,14 @@
   "brands-by-country": "Marken nach Ländern",
   "brands-by-founded": {
     "decade": "Marken, die in den {{decade}}er Jahren gegründet wurden",
-    "century": "Marken, die in den {{century}}er Jahren gegründet wurden"
+    "century": "Marken, die in den {{century, century}}er Jahren gegründet wurden"
   },
   "brands-founded": "Marken nach Gründungsjahr",
   "brand-info-in-validate": "Die Informationen werden überprüft und sind in Kürze verfügbar.",
-  "century": "Jh.",
+  "century": {
+    "number": "{{value, century}}",
+    "dimension": "Jh."
+  },
   "footer": "Keller",
   "privacy-info": "Wir speichern keine Daten, die eine Identifizierung Ihrer Person ermöglichen. Wir verwenden Cookies nur, um die Sprache zu speichern, die Sie beim letzten Mal ausgewählt haben.",
   "not-found": "Seite wurde nicht gefunden",

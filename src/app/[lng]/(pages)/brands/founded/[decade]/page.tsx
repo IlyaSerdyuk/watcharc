@@ -4,7 +4,6 @@ import { redirect } from 'next/navigation';
 
 import Breadcrumbs from '@components/Breadcrumbs';
 import Title from '@components/Title';
-import centuryHelper from '@i18n/centuryHelper';
 import translate from '@i18n/server';
 import getListByFounded from '@models/brand/getListByFounded';
 import { metaLangs } from '@services/meta';
@@ -19,7 +18,7 @@ type DecadePageProps = PageProps<{
 function title(t: TFunction, lng: Languages, decade: string) {
   return decade.charAt(2) === 'x'
     ? t('brands-by-founded.century', {
-        century: centuryHelper(lng, Number(decade.substring(0, 2)) + 1),
+        century: Number(decade.substring(0, 2)) + 1,
       })
     : t('brands-by-founded.decade', { decade: decade.replaceAll('x', '0') });
 }

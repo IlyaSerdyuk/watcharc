@@ -1,4 +1,6 @@
-function convertArabicToRoman(num: number) {
+import type { i18n } from 'i18next';
+
+function arabicToRoman(num: number) {
   const rules: Record<string, number> = {
     M: 1000,
     CM: 900,
@@ -47,16 +49,20 @@ function ordinalSuffixOf(i: number) {
   return `${i}th`;
 }
 
-export default function centuryHelper(lng: Languages, century: number) {
-  // eslint-disable-next-line default-case
-  switch (lng) {
-    case 'ru':
-      return convertArabicToRoman(century);
-    case 'de':
-      return `${century}.`;
-    case 'en':
-      return ordinalSuffixOf(century);
-    default:
-      return century;
-  }
+export default function initCenturyFormatter(i18nInstance: i18n) {
+  i18nInstance.services.formatter?.add('century', (value, lng) => {
+    if (!Number.isNaN(+value)) {
+      switch (lng) {
+        case 'en':
+          return ordinalSuffixOf(value);
+        case 'de':
+          return `${value}.`;
+        case 'ru':
+          return arabicToRoman(value);
+        default:
+          return value;
+      }
+    }
+    return value;
+  });
 }
