@@ -8,6 +8,8 @@ import decadeUrlHelper from '@models/brand/decadeUrlHelper';
 import getFoundedIndex from '@models/brand/getFoundedIndex';
 import { metaLangs } from '@services/meta';
 
+export const revalidate = 3600;
+
 export async function generateMetadata({
   params: { lng },
 }: PageProps): Promise<Metadata> {

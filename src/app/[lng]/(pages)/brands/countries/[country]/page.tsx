@@ -23,6 +23,7 @@ export async function generateStaticParams() {
 // Для упрощения генерируем пути для всех стран в базе без учета наличия связанных стран
 // Частота появления новых кодов стран несоизмеримо ниже частоты релизов сайта
 export const dynamicParams = false;
+export const revalidate = 3600;
 
 export async function generateMetadata({
   params: { lng, country: countryCode },

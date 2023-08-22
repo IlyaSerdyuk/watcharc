@@ -5,6 +5,7 @@ import { redirect } from 'next/navigation';
 import Breadcrumbs from '@components/Breadcrumbs';
 import Title from '@components/Title';
 import translate from '@i18n/server';
+import getFoundedIndex from '@models/brand/getFoundedIndex';
 import getListByFounded from '@models/brand/getListByFounded';
 import { metaLangs } from '@services/meta';
 import { YearAccuracy } from '@services/year';
@@ -14,6 +15,23 @@ import BrandLink from '../../_components/BrandLink';
 type DecadePageProps = PageProps<{
   decade: string;
 }>;
+
+export async function generateStaticParams() {
+  const items = await getFoundedIndex();
+  return Object.entries(items).reduce((map, [century, decades]) => {
+    Object.keys(decades).forEach(decade => {
+      map.push({
+        decade:
+          decade === 'unknown' ? `${century}xx` : `${decade.substring(0, 3)}x`,
+      });
+    });
+    return map;
+  }, [] as Array<{ decade: string }>);
+}
+
+// На случай расхождения кэша страницы и рубрикатора
+export const dynamicParams = true;
+export const revalidate = 3600;
 
 function title(t: TFunction, lng: Languages, decade: string) {
   return decade.charAt(2) === 'x'

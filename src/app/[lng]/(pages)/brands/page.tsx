@@ -10,6 +10,8 @@ import SectionByCountry from './_components/SectionByCountry';
 import SectionByFirstLetter from './_components/SectionByFirstLetter';
 import SectionByOther from './_components/SectionByOther';
 
+export const revalidate = 3600;
+
 export async function generateMetadata({
   params: { lng },
 }: PageProps): Promise<Metadata> {

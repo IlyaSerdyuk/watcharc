@@ -14,6 +14,12 @@ type BrandPageProps = PageProps<{
   alias: string;
 }>;
 
+// К сожалению, с generateStaticParams при 4К брендов сборка проекта
+// обрывается ошибкой по памяти.
+// Вернемся к предварительному кешированию страниц брендов позднее.
+
+export const revalidate = 3600;
+
 export async function generateMetadata({
   params: { lng, alias },
 }: BrandPageProps): Promise<Metadata | null> {

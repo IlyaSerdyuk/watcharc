@@ -18,6 +18,7 @@ export function generateStaticParams() {
 }
 
 export const dynamicParams = false;
+export const revalidate = 3600;
 
 export async function generateMetadata({
   params: { lng, letter },
