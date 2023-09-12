@@ -21,13 +21,16 @@ export default function Countries({
 
   return (
     <Item title={t('country')} Icon={FlagIcon}>
-      {countries.map(country => (
-        <Link
-          href={`/${lng}/brands/${country.code}`}
-          className="hover:underline focus:underline"
-        >
-          {country.title}
-        </Link>
+      {countries.map((country, index) => (
+        <>
+          {!!index && ', '}
+          <Link
+            href={`/${lng}/brands/${country.code}`}
+            className="hover:underline focus:underline"
+          >
+            {country.title}
+          </Link>
+        </>
       ))}
     </Item>
   );

@@ -22,13 +22,16 @@ export default function CountriesOfOrigin({
   return (
     <Item Icon={FlagIcon}>
       {t('founded-in-country')}{' '}
-      {countries.map(country => (
-        <Link
-          href={`/${lng}/brands/${country.code}`}
-          className="hover:underline focus:underline"
-        >
-          {country.title}
-        </Link>
+      {countries.map((country, index) => (
+        <>
+          {!!index && ', '}
+          <Link
+            href={`/${lng}/brands/${country.code}`}
+            className="hover:underline focus:underline"
+          >
+            {country.title}
+          </Link>
+        </>
       ))}
     </Item>
   );
