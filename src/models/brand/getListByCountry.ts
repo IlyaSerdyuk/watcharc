@@ -8,6 +8,7 @@ import type { BrandList } from './types';
  */
 export default async function getListByCountry(country: CountryType) {
   const rows = await db.brands
+    .distinct()
     .select(['brands.id', 'brands.title', 'brands.alias'])
     .innerJoin('brands__countries AS bc', 'bc.brand_id', 'brands.id')
     .where('bc.country_id', '=', country.id)

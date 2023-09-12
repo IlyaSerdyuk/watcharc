@@ -8,7 +8,7 @@ export default async function getIndex(lng: Languages) {
     .select({
       code: 'countries.code',
       title: `countries.title_${lng}`,
-      number: db.knex.raw('COUNT(*)'),
+      number: db.knex.raw('COUNT(DISTINCT bc.brand_id)'),
     })
     .innerJoin('brands__countries AS bc', 'bc.country_id', 'countries.id')
     .groupBy('countries.id')
