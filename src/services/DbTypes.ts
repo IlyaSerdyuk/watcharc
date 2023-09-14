@@ -19,7 +19,6 @@ export interface DbBrand {
   title: string;
   alternative_titles: string | null;
   alias: string | null;
-  has_page: number | null;
   website: string | null;
   website_in_wayback: string | null;
   instagram: string | null;
