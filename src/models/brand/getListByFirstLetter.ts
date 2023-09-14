@@ -16,8 +16,14 @@ export default async function getListByFirstLetter(letter: string) {
     )
     .innerJoin('brands', 'brands.id', 'brand_aliases.brand_id')
     .orderBy('brand_aliases.title');
-  const rows = await (letter === BRAND_FIRST_NUMBER
-    ? q.where('brand_aliases.title', 'regexp', '^[0-9]')
-    : q.where('brand_aliases.title', 'like', `${letter}%`));
+  if (letter === BRAND_FIRST_NUMBER) {
+    q.where('brand_aliases.title', 'like', '0%');
+    for (let number = 1; number < 10; number++) {
+      q.orWhere('brand_aliases.title', 'like', `${number}%`);
+    }
+  } else {
+    q.where('brand_aliases.title', 'like', `${letter}%`);
+  }
+  const rows = await q; 
   return rows as BrandList;
 }
