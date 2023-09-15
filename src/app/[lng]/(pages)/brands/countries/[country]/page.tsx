@@ -51,7 +51,7 @@ export default async function CountryPage({
     notFound();
   }
 
-  const brands = await getListByCountry(country);
+  const brandGroupedList = await getListByCountry(country);
   const { t } = await translate(lng);
 
   return (
@@ -61,13 +61,20 @@ export default async function CountryPage({
         pages={[{ title: t('nav-brands'), href: '/brands' }]}
       />
       <Title title={`${t('brands-by-country')}. ${country.title}`} />
-      <ul className="md:columns-2 lg:columns-3 xl:columns-4 space-y-2 mt-6">
-        {brands.map(brand => (
-          <li key={brand.id}>
-            <BrandLink brand={brand} t={t} lng={lng} />
-          </li>
+      <div className="md:columns-2 lg:columns-3 xl:columns-4 space-y-4 mt-6">
+        {Array.from(brandGroupedList).map(([firstSymbol, brands]) => (
+          <div className="flex break-inside-avoid-column">
+            <div className="font-bold w-6">{firstSymbol}</div>
+            <ul className="space-y-2">
+              {brands.map(brand => (
+                <li key={brand.id}>
+                  <BrandLink brand={brand} t={t} lng={lng} />
+                </li>
+              ))}
+            </ul>
+          </div>
         ))}
-      </ul>
+      </div>
     </>
   );
 }

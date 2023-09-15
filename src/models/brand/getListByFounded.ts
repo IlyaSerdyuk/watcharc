@@ -1,6 +1,8 @@
 import { db } from '@services/Db';
 import { YearAccuracy } from '@services/year';
 
+import mapBrandListToGroups from './mapBrandListToGroups';
+
 /**
  * Получить бренды, основанные в конкретное десятилетие или в столетие с неизвестным десятилетием.
  */
@@ -26,5 +28,5 @@ export default async function getListByFounded(decade: string) {
     q.andWhere('year_founded_accuracy', '<>', YearAccuracy.Century);
   }
   const rows = await q;
-  return rows;
+  return mapBrandListToGroups(rows);
 }

@@ -1,3 +1,5 @@
+import Diacritics from 'diacritic';
+
 import { db } from '@services/Db';
 
 import type { BrandList } from './types';
@@ -24,6 +26,16 @@ export default async function getListByFirstLetter(letter: string) {
   } else {
     q.where('brand_aliases.title', 'like', `${letter}%`);
   }
-  const rows = await q; 
-  return rows as BrandList;
+  const rows = (await q) as BrandList;
+
+  return rows.reduce((list, row) => {
+    const secondLetter = Diacritics.clean(row.title[1].toLowerCase())[0];
+    const secondSymbol = /^[a-z]$/.test(secondLetter) ? secondLetter : null;
+    const key = letter === BRAND_FIRST_NUMBER ? row.title[0] : secondSymbol;
+    if (!list.has(key)) {
+      list.set(key, []);
+    }
+    list.get(key)?.push(row);
+    return list;
+  }, new Map<string | null, BrandList>());
 }

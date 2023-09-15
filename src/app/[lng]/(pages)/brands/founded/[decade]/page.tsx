@@ -61,7 +61,7 @@ export default async function DecadePage({
   params: { lng, decade },
 }: DecadePageProps) {
   const { t } = await translate(lng);
-  const brands = await getListByFounded(decade);
+  const brandGroupedList = await getListByFounded(decade);
   return (
     <>
       <Breadcrumbs
@@ -72,20 +72,27 @@ export default async function DecadePage({
         ]}
       />
       <Title title={title(t, lng, decade)} />
-      <ul className="md:columns-2 lg:columns-3 xl:columns-4 space-y-2 mt-6">
-        {brands.map(brand => (
-          <li key={brand.id} className="flex gap-2">
-            <BrandLink brand={brand} t={t} lng={lng} />
-            {brand.year_founded_accuracy !== YearAccuracy.Century ? (
-              <div className="text-sm leading-6 font-medium text-gray-500">
-                {brand.year_founded_accuracy === YearAccuracy.Year
-                  ? brand.year_founded
-                  : `${String(brand.year_founded).substring(0, 3)}x`}
-              </div>
-            ) : null}
-          </li>
+      <div className="md:columns-2 lg:columns-3 xl:columns-4 space-y-4 mt-6">
+        {Array.from(brandGroupedList).map(([firstSymbol, brands]) => (
+          <div className="flex break-inside-avoid-column">
+            <div className="font-bold w-6">{firstSymbol}</div>
+            <ul className="space-y-2">
+              {brands.map(brand => (
+                <li key={brand.id} className="flex gap-2">
+                  <BrandLink brand={brand} t={t} lng={lng} />
+                  {brand.year_founded_accuracy !== YearAccuracy.Century ? (
+                    <div className="text-sm leading-6 font-medium text-gray-500">
+                      {brand.year_founded_accuracy === YearAccuracy.Year
+                        ? brand.year_founded
+                        : `${String(brand.year_founded).substring(0, 3)}x`}
+                    </div>
+                  ) : null}
+                </li>
+              ))}
+            </ul>
+          </div>
         ))}
-      </ul>
+      </div>
     </>
   );
 }

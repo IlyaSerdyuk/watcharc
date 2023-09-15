@@ -39,7 +39,7 @@ export default async function LetterPage({
   params: { lng, letter },
 }: LetterPageProps) {
   const { t } = await translate(lng);
-  const brands = await getListByFirstLetter(letter);
+  const brandGroupedList = await getListByFirstLetter(letter);
   return (
     <>
       <Breadcrumbs
@@ -53,18 +53,29 @@ export default async function LetterPage({
             : t('brands-by-first-letter', { letter: letter.toUpperCase() })
         }
       />
-      <ul className="md:columns-2 lg:columns-3 xl:columns-4 space-y-2 mt-6">
-        {brands.map(brand => (
-          <li key={brand.id}>
-            <BrandLink brand={brand} t={t} lng={lng} />
-            {brand.qualification && (
-              <span className="ml-2 text-sm text-gray-600">
-                ({brand.qualification})
-              </span>
-            )}
-          </li>
+      <div className="md:columns-2 lg:columns-3 xl:columns-4 space-y-4 mt-6">
+        {Array.from(brandGroupedList).map(([secondLetter, brands]) => (
+          <div className="flex break-inside-avoid-column">
+            <div className="font-bold w-8">
+              {letter === BRAND_FIRST_NUMBER
+                ? brands[0].title[0]
+                : secondLetter && `${letter.toUpperCase()}${secondLetter}`}
+            </div>
+            <ul className="space-y-2">
+              {brands.map(brand => (
+                <li key={brand.id}>
+                  <BrandLink brand={brand} t={t} lng={lng} />
+                  {brand.qualification && (
+                    <span className="ml-2 text-sm text-gray-600">
+                      ({brand.qualification})
+                    </span>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
         ))}
-      </ul>
+      </div>
     </>
   );
 }
