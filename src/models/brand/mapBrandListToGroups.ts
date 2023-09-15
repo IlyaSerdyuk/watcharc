@@ -1,10 +1,10 @@
-import Diacritics from 'diacritic';
+import { remove as cleanDiacritics } from 'diacritics';
 
 export default function mapBrandListToGroups<
   T extends { title: string }[] = [],
 >(rows: T) {
   return rows.reduce((list, row) => {
-    const firstSymbol = Diacritics.clean(row.title[0].toUpperCase())[0];
+    const firstSymbol = cleanDiacritics(row.title[0].toUpperCase())[0];
     if (!list.has(firstSymbol)) {
       list.set(firstSymbol, [] as unknown as T);
     }

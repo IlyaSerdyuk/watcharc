@@ -1,4 +1,4 @@
-import Diacritics from 'diacritic';
+import { remove as cleanDiacritics } from 'diacritics';
 
 import { db } from '@services/Db';
 
@@ -29,7 +29,7 @@ export default async function getListByFirstLetter(letter: string) {
   const rows = (await q) as BrandList;
 
   return rows.reduce((list, row) => {
-    const secondLetter = Diacritics.clean(row.title[1].toLowerCase())[0];
+    const secondLetter = cleanDiacritics(row.title[1].toLowerCase())[0];
     const secondSymbol = /^[a-z]$/.test(secondLetter) ? secondLetter : null;
     const key = letter === BRAND_FIRST_NUMBER ? row.title[0] : secondSymbol;
     if (!list.has(key)) {
