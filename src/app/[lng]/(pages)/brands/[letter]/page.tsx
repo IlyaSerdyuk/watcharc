@@ -55,7 +55,7 @@ export default async function LetterPage({
       />
       <div className="md:columns-2 lg:columns-3 xl:columns-4 space-y-4 mt-6">
         {Array.from(brandGroupedList).map(([secondLetter, brands]) => (
-          <div className="flex break-inside-avoid-column">
+          <div className="flex break-inside-avoid-column" key={secondLetter}>
             <div className="font-bold w-8">
               {letter === BRAND_FIRST_NUMBER
                 ? brands[0].title[0]

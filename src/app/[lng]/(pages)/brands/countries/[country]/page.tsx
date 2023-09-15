@@ -63,7 +63,7 @@ export default async function CountryPage({
       <Title title={`${t('brands-by-country')}. ${country.title}`} />
       <div className="md:columns-2 lg:columns-3 xl:columns-4 space-y-4 mt-6">
         {Array.from(brandGroupedList).map(([firstSymbol, brands]) => (
-          <div className="flex break-inside-avoid-column">
+          <div className="flex break-inside-avoid-column" key={firstSymbol}>
             <div className="font-bold w-6">{firstSymbol}</div>
             <ul className="space-y-2">
               {brands.map(brand => (
