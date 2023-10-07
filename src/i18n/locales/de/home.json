@@ -1,10 +1,10 @@
 {
   "title": "Der größte Katalog moderner Uhrenmarken",
   "number": "{{value, number}}",
-  "brands": "marke",
-  "brands_plural": "marken",
-  "countries": "land",
-  "countries_plural": "länder",
+  "brands_one": "marke",
+  "brands_other": "marken",
+  "countries_one": "land",
+  "countries_other": "länder",
   "import-sources": "Die Informationen für die Website wurden aus offenen Quellen gesammelt – wir haben etwa zweihundert offene Kataloge großer Online-Shops, Enzyklopädien, Foren und Websites von Uhrenliebhabern sowie Websites und soziale Netzwerke aller vertretenen Marken untersucht.",
   "import-status": "Um alle Daten zu bestätigen, bauen wir nun die Kommunikation mit offiziellen Vertretern von Marken, Archiven und Museen auf.",
   "contact": {

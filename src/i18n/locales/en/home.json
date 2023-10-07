@@ -1,10 +1,10 @@
 {
   "title": "The largest catalog of modern watch\u00a0brands",
   "number": "{{value, number}}",
-  "brands": "brand",
-  "brands_plural": "brands",
-  "countries": "country",
-  "countries_plural": "countries",
+  "brands_one": "brand",
+  "brands_other": "brands",
+  "countries_one": "country",
+  "countries_other": "countries",
   "import-sources": "The information for the site was collected from open sources – we studied about two hundred open catalogs of large online stores, encyclopedias, forums and websites of watch enthusiasts, as well as websites and social networks of all represented brands.",
   "import-status": "Now, to confirm all the data, we are building communications with official representatives of brands, archives and museums.",
   "contact": {
