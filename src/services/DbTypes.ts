@@ -3,7 +3,9 @@ import { Knex } from 'knex';
 export interface DbBrandAlias {
   id: number;
   brand_id: number;
+  title_prefix: string | null;
   title: string;
+  title_postfix: string | null;
   qualification: string | null;
 }
 

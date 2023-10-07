@@ -12,7 +12,9 @@ export default async function getListByFirstLetter(letter: string) {
   const q = db.brandAliases
     .select(
       'brand_aliases.id',
+      'brand_aliases.title_prefix',
       'brand_aliases.title',
+      'brand_aliases.title_postfix',
       'brand_aliases.qualification',
       'brands.alias',
     )

@@ -10,7 +10,9 @@ export const BRAND_FIRST_NUMBER = '8';
 
 export type BrandList = {
   id: number;
+  title_prefix?: string;
   title: string;
+  title_postfix?: string;
   qualification?: string;
   alias: string | null;
 }[];
