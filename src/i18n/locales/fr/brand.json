@@ -1,0 +1,16 @@
+{
+  "website": "Site officiel",
+  "founded-in-year": "Fondée en {{year}}",
+  "closed-in": "Fermé en {{year}}",
+  "country": "Pays",
+  "founded-in-country": "Fondée en ",
+  "address": "Adresse",
+  "phone": "Téléphone",
+  "email": "E-mail",
+  "list-of-references": "En savoir plus sur la marque",
+  "credibility-open-source": "Les informations sont collectées à partir de sources publiques et sont toujours en vérification et d'ajouts de représentants officiels de la marque.",
+  "credibility-retailer": "Informations fournies par le vendeur de montres de la marque.",
+  "credibility-owner": "Informations fournies par le représentant officiel de la marque.",
+  "not-found": "Marque non trouvée",
+  "go-to-index": "Aller à l'index des marques"
+}

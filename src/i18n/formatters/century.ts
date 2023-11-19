@@ -57,6 +57,8 @@ export default function initCenturyFormatter(i18nInstance: i18n) {
           return ordinalSuffixOf(value);
         case 'de':
           return `${value}.`;
+        case 'fr':
+          return `${value}e`;
         case 'ru':
           return arabicToRoman(value);
         default:

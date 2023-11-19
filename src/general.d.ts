@@ -1,4 +1,4 @@
-type Languages = 'en' | 'de' | 'ru';
+type Languages = 'en' | 'de' | 'fr' | 'ru';
 
 type PageProps<T = {}> = {
   params: T & {

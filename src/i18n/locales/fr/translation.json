@@ -1,0 +1,27 @@
+{
+  "meta-description": "Le plus grand catalogue de marques de montres modernes",
+  "to-home": "Au principal",
+  "nav-brands": "Marques",
+  "brands": "Marques",
+  "by-first-letter": "Par première lettre",
+  "by-country": "Par pays",
+  "by-other": "Autres groupes",
+  "by-founded": "Par année de fabrication",
+  "brands-by-first-number": "Marques commençant par des chiffres",
+  "brands-by-first-letter": "Marques commençant par \"{{letter}}\"",
+  "brands-by-country": "Marques par pays",
+  "brands-by-founded": {
+    "decade": "Marques fondées dans les années {{decade}}",
+    "century": "Marques fondées au {{century}} siècle"
+  },
+  "brands-founded": "Marques par année de fondation",
+  "brand-info-in-validate": "Les informations sont en cours de vérification et seront bientôt disponibles.",
+  "century": {
+    "number": "{{value, century}}",
+    "dimension": "siècle"
+  },
+  "footer": "Sous-sol",
+  "privacy-info": "Nous ne collectons aucunes données personnelles. Nous utilisons des cookies uniquement pour enregistrer la langue choisie la dernière fois.",
+  "not-found": "Page introuvable",
+  "go-to-home": "Retourner à l'accueil"
+}

@@ -1,0 +1,24 @@
+{
+  "title": "Le plus grand catalogue de marques de montres modernes",
+  "number": "{{value, number}}",
+  "brands_one": "marque",
+  "brands_other": "marques",
+  "countries": "pays",
+  "import-sources": "Les informations du site ont été collectées à partir de sources ouvertes – nous avons étudié environ deux cents catalogues ouverts de grandes boutiques en ligne, des encyclopédies, des forums et des sites Web de passionnés de montres, ainsi que des sites Web et des réseaux sociaux de toutes les marques représentées.",
+  "import-status": "Maintenant, pour confirmer toutes les données, nous établissons des communications avec des représentants officiels de marques, d'archives et de musées.",
+  "contact": {
+    "title": "Écrivez-nous",
+    "call-1": "Connaissez-vous une marque que nous n'avons pas?",
+    "call-2": "Ou souhaiteriez vous compléter nos informations?",
+    "call-3": "Ou peut-être êtes le représentant officiel d'une marque?",
+    "call-4": "Écrivez-nous! Nous attendons vos messages!",
+    "message": "Message",
+    "email": "E-mail",
+    "email-motivation": "Veuillez indiquer si vous souhaitez recevoir notre réponse.",
+    "send": "Envoyer",
+    "answer-time": "Temps de réponse – environ 1 semaine",
+    "sending": "Le message est en train de s'envoyer\u2026",
+    "successfully": "Merci pour votre message!",
+    "fail": "Quelque chose s'est mal passé et nous n'avons pas reçu votre message. Merci d'essayer plus tard."
+  }
+}
