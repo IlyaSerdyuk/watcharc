@@ -1,0 +1,21 @@
+{
+  "title": "Statistics",
+  "number": "{{value, number}}",
+  "total": "In total, the database contains",
+  "brands_one": "brand",
+  "brands_other": "brands",
+  "from": "from",
+  "countries_one": "country",
+  "countries_other": "countries",
+  "details": {
+    "website": "With official website",
+    "instagram": "With Instagram",
+    "founded": "With founded year",
+    "closed": "With closed year",
+    "address": "With address",
+    "phone": "With phone",
+    "email": "With email",
+    "countries": "With country",
+    "facebook": "With Facebook"
+  }
+}

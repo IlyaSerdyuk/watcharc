@@ -24,9 +24,15 @@ export default async function Header({ lng }: { lng: Languages }) {
         <div className="flex">
           <Link
             href={`/${lng}/brands`}
-            className="text-sm font-semibold leading-6 text-gray-900"
+            className="text-sm font-semibold leading-6 text-gray-900 px-3 mx-2"
           >
             {t('nav-brands')}
+          </Link>
+          <Link
+            href={`/${lng}/statistics`}
+            className="text-sm font-semibold leading-6 text-gray-900 px-3 mx-2"
+          >
+            {t('nav-statistics')}
           </Link>
         </div>
 

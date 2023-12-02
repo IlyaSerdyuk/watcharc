@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import Header from '@components/Header';
 import translate from '@i18n/server';
 import { languages } from '@i18n/settings';
-import getStatistics from '@models/getStatistics';
+import getStatistics from '@models/statistics/forHome';
 import { metaLangs } from '@services/meta';
 
 import ContactForm from './ContactForm';

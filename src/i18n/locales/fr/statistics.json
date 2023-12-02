@@ -1,0 +1,20 @@
+{
+  "title": "Statistiques",
+  "number": "{{value, number}}",
+  "total": "Au total, la base de données contient",
+  "brands_one": "marque",
+  "brands_other": "marques",
+  "from": "de",
+  "countries": "pays",
+  "details": {
+    "website": "Avec le site officiel",
+    "instagram": "Avec un compte Instagram",
+    "founded": "Bonne année de fondation",
+    "closed": "Bonne année de clôture",
+    "address": "Avec adresse",
+    "phone": "Avec téléphone",
+    "email": "Avec adresse email",
+    "countries": "Avec le pays",
+    "facebook": "Avec un compte Facebook"
+  }
+}

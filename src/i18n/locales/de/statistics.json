@@ -1,0 +1,21 @@
+{
+  "title": "Statistiken",
+  "number": "{{value, number}}",
+  "total": "Insgesamt enthält die Datenbank",
+  "brands_one": "Marke",
+  "brands_other": "Marken",
+  "from": "aus",
+  "countries_one": "Land",
+  "countries_other": "Ländern",
+  "details": {
+    "website": "Mit offizieller Website",
+    "instagram": "Mit einem Instagram-Account",
+    "founded": "Mit Angabe des Gründungsjahres",
+    "closed": "Mit Angabe des Schliessungsjahres",
+    "address": "Mit Hauptsitzadresse",
+    "phone": "Mit Telefon",
+    "email": "Mit E-Mail-Adresse",
+    "countries": "Mit Angabe des Landes",
+    "facebook": "Mit einem Facebook-Account"
+  }
+}

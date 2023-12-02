@@ -1,0 +1,23 @@
+{
+  "title": "Статистика",
+  "number": "{{value, number}}",
+  "total": "Всего в базе",
+  "brands_one": "бренд",
+  "brands_few": "бренда",
+  "brands_many": "брендов",
+  "from": "из",
+  "countries_one": "страна",
+  "countries_few": "страны",
+  "countries_many": "стран",
+  "details": {
+    "website": "С официальным сайтом",
+    "instagram": "С аккаунтом в Instagram",
+    "founded": "С годом основания",
+    "closed": "С годом закрытия",
+    "address": "С адресом штаб-квартиры",
+    "phone": "С телефоном",
+    "email": "С адресом эл.почты",
+    "countries": "Со страной происхождения",
+    "facebook": "С аккаунтом в Facebook"
+  }
+}
