@@ -2,17 +2,22 @@ import Link from 'next/link';
 
 import translate from '@i18n/server';
 
-import HeaderLang from './HeaderLang';
+import LanguageMenu from './LanguageMenu';
+import MobileMenu from './MobileMenu';
 
 export default async function Header({ lng }: { lng: Languages }) {
   const { t } = await translate(lng);
+  const items = [
+    { label: t('nav-brands'), url: '/brands' },
+    { label: t('nav-statistics'), url: '/statistics' },
+  ];
   return (
     <header>
       <nav
-        className="mx-auto flex max-w-screen-2xl items-center justify-between gap-x-6 p-6 lg:px-8"
+        className="mx-auto flex max-w-screen-2xl items-center justify-between p-6 sm:px-8"
         aria-label="Global"
       >
-        <div className="flex lg:flex-1">
+        <div className="flex sm:flex-1">
           <Link
             href={`/${lng}`}
             className="-m-1.5 p-1.5 text-base font-extrabold leading-6"
@@ -20,23 +25,19 @@ export default async function Header({ lng }: { lng: Languages }) {
             WatchArc
           </Link>
         </div>
-
-        <div className="flex">
-          <Link
-            href={`/${lng}/brands`}
-            className="text-sm font-semibold leading-6 text-gray-900 px-3 mx-2"
-          >
-            {t('nav-brands')}
-          </Link>
-          <Link
-            href={`/${lng}/statistics`}
-            className="text-sm font-semibold leading-6 text-gray-900 px-3 mx-2"
-          >
-            {t('nav-statistics')}
-          </Link>
+        <MobileMenu items={items} lng={lng} />
+        <div className="hidden sm:flex sm:gap-x-12">
+          {items.map(({ label, url }) => (
+            <Link
+              href={`/${lng}${url}`}
+              className="text-sm font-semibold leading-6 text-gray-900"
+              key={label}
+            >
+              {label}
+            </Link>
+          ))}
         </div>
-
-        <HeaderLang lng={lng} />
+        <LanguageMenu lng={lng} />
       </nav>
     </header>
   );

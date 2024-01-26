@@ -24,5 +24,7 @@
   "footer": "Sous-sol",
   "privacy-info": "Nous ne collectons aucunes données personnelles. Nous utilisons des cookies uniquement pour enregistrer la langue choisie la dernière fois.",
   "not-found": "Page introuvable",
-  "go-to-home": "Retourner à l'accueil"
+  "go-to-home": "Retourner à l'accueil",
+  "open-main-menu": "Ouvrir le menu principal",
+  "close-main-menu": "Fermer le menu"
 }

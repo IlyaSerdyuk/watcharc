@@ -24,5 +24,7 @@
   "footer": "Footer",
   "privacy-info": "We do not collect any data that can identify you. We use cookies only to save the language you chose last time.",
   "not-found": "Page not found",
-  "go-to-home": "Go to home page"
+  "go-to-home": "Go to home page",
+  "open-main-menu": "Open main menu",
+  "close-main-menu": "Close menu"
 }

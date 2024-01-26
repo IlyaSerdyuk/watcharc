@@ -6,6 +6,13 @@ export const fallbackLng = 'en';
 export const languages: Languages[] = [fallbackLng, 'de', 'fr', 'ru'];
 export const defaultNS = 'translation';
 
+export const languageLabels: Record<Languages, string> = {
+  en: 'English',
+  de: 'Deutsch',
+  fr: 'Français',
+  ru: 'Русский',
+};
+
 export function getOptions(
   lng = fallbackLng,
   ns: string | string[] = defaultNS,
