@@ -17,5 +17,6 @@
     "email": "Mit E-Mail-Adresse",
     "countries": "Mit Angabe des Landes",
     "facebook": "Mit einem Facebook-Account"
-  }
+  },
+  "current-at": "Aktuell {{value, datetime}}"
 }

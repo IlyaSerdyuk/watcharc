@@ -22,6 +22,7 @@ export async function generateMetadata({
 export default async function StatisticsPage({ params: { lng } }: PageProps) {
   const { t } = await translate(lng, 'statistics');
   const stats = await getStatistics();
+  const date = new Date();
   return (
     <>
       <Title title={t('title')} />
@@ -55,6 +56,17 @@ export default async function StatisticsPage({ params: { lng } }: PageProps) {
           </div>
         ))}
       </dl>
+      <p className="mt-5 text-sm font-medium text-gray-500">
+        {t('current-at', {
+          value: date,
+          formatParams: {
+            value: {
+              dateStyle: 'short',
+              timeStyle: 'long',
+            },
+          },
+        })}
+      </p>
     </>
   );
 }

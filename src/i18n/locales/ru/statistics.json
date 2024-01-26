@@ -19,5 +19,6 @@
     "email": "С адресом эл.почты",
     "countries": "Со страной происхождения",
     "facebook": "С аккаунтом в Facebook"
-  }
+  },
+  "current-at": "Актуально на {{value, datetime}}"
 }

@@ -17,5 +17,6 @@
     "email": "With email",
     "countries": "With country",
     "facebook": "With Facebook"
-  }
+  },
+  "current-at": "Current at {{-value, datetime}}"
 }
