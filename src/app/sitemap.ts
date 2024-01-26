@@ -16,9 +16,8 @@ import getCountriesListForSitemap from '@models/country/getListForSitemap';
 
 async function getBrandsMap() {
   const rows = [
-    {
-      url: 'https://watcharc.org/brands',
-    },
+    { url: 'https://watcharc.org/brands' },
+    { url: 'https://watcharc.org/statistics' },
   ];
 
   // Алфавитный список брендов
