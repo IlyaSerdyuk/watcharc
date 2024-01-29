@@ -26,5 +26,10 @@
   "not-found": "Page introuvable",
   "go-to-home": "Retourner à l'accueil",
   "open-main-menu": "Ouvrir le menu principal",
-  "close-main-menu": "Fermer le menu"
+  "close-main-menu": "Fermer le menu",
+  "brand-search": "Recherche de marque",
+  "close-search": "Fermer la recherche",
+  "no-brand-found": "Aucune marque trouvée.",
+  "search-result-total": "Résultats de recherche totaux: {{total, number}}",
+  "search-fail": "Erreur! Veuillez réessayer plus tard"
 }

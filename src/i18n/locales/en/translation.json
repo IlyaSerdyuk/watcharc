@@ -26,5 +26,10 @@
   "not-found": "Page not found",
   "go-to-home": "Go to home page",
   "open-main-menu": "Open main menu",
-  "close-main-menu": "Close menu"
+  "close-main-menu": "Close menu",
+  "brand-search": "Brand search",
+  "close-search": "Close search",
+  "no-brand-found": "No brand found.",
+  "search-result-total": "Total search results: {{total, number}}",
+  "search-fail": "Error! Please try again later"
 }

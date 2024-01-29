@@ -11,14 +11,14 @@ import { languageLabels } from '@i18n/settings';
 export default function LanguageMenu({ lng }: { lng: Languages }) {
   const pathname = usePathname().substring(3);
   return (
-    <Popover.Group className="hidden sm:flex sm:flex-1 sm:justify-end">
+    <Popover.Group>
       <Popover className="relative">
-        <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
+        <Popover.Button className="flex items-center text-sm font-semibold leading-6 text-gray-900">
           <LanguageIcon
             className="h-5 w-5 flex-none text-gray-400"
             aria-hidden="true"
           />
-          {languageLabels[lng]}
+          <div className="mx-2">{languageLabels[lng]}</div>
           <ChevronDownIcon
             className="h-5 w-5 flex-none text-gray-400"
             aria-hidden="true"

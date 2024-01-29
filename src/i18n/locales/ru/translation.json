@@ -26,5 +26,10 @@
   "not-found": "Страница не найдена",
   "go-to-home": "Перейти на главную страницу",
   "open-main-menu": "Открыть главное меню",
-  "close-main-menu": "Закрыть меню"
+  "close-main-menu": "Закрыть меню",
+  "brand-search": "Поиск брендов",
+  "close-search": "Закрыть поиск",
+  "no-brand-found": "Бренд не найден.",
+  "search-result-total": "Всего результатов поиска: {{total, number}}",
+  "search-fail": "Ошибка! Попробуйте позже"
 }

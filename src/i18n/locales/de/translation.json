@@ -26,5 +26,10 @@
   "not-found": "Seite wurde nicht gefunden",
   "go-to-home": "Auf die Homepage",
   "open-main-menu": "Hauptmenü öffnen",
-  "close-main-menu": "Menü schließen"
+  "close-main-menu": "Menü schließen",
+  "brand-search": "Markensuche",
+  "close-search": "Suche schließen",
+  "no-brand-found": "Keine Marke gefunden.",
+  "search-result-total": "Gesamte Suchergebnisse: {{total, number}}",
+  "search-fail": "Fehler! Bitte versuchen Sie es später noch einmal"
 }
