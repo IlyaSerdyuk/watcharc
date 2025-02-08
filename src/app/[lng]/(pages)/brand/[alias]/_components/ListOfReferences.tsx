@@ -2,6 +2,15 @@ import type { TFunction } from 'i18next';
 
 import type { BrandLinkType } from '@models/brand/types';
 
+const httpOnlyRef = [
+  'Montre24',
+];
+
+function href(type: string, url: string): string {
+  const protocol = httpOnlyRef.includes(type) ? 'http' : 'https';
+  return `${protocol}://${url}`;
+}
+
 export default function ListOfReferences({
   links,
   t,
@@ -28,7 +37,7 @@ export default function ListOfReferences({
             </dt>
             <dd className="pt-1 text-sm leading-6 text-gray-700 sm:table-cell sm:pt-0 sm:pl-4">
               <a
-                href={`//${link.url}`}
+                href={href(link.type, link.url)}
                 target="_blank"
                 rel="noreferrer"
                 className="hover:underline focus:underline"
