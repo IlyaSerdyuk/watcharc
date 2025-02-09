@@ -17,4 +17,6 @@ export type BrandList = {
   alias: string | null;
 }[];
 
+export type BrandLogoType = DbBrand['logo_type'];
+
 export interface BrandLinkType extends DbBrandLink {}

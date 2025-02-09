@@ -3,7 +3,8 @@ import { db } from '@services/Db';
 import type { CountryType } from '../country/types';
 import type { BrandLinkType, BrandType } from './types';
 
-type Type = BrandType & {
+export type BrandCartType = BrandType & {
+  alias: Exclude<BrandType['alias'], null>;
   countries: Pick<CountryType, 'title' | 'code'>[];
   countriesOfOrigin: Pick<CountryType, 'title' | 'code'>[];
   links: BrandLinkType[];
@@ -12,7 +13,7 @@ type Type = BrandType & {
 export default async function getByCode(
   alias: string,
   lng: Languages,
-): Promise<Type | undefined> {
+): Promise<BrandCartType | undefined> {
   const brand = await db.brands.select('*').where('alias', '=', alias).first();
   if (!brand) {
     return undefined;

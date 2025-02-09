@@ -1,4 +1,5 @@
 {
+  "logo": "Logo",
   "website": "Site officiel",
   "founded-in-year": "Fondée en {{year}}",
   "closed-in": "Fermé en {{year}}",

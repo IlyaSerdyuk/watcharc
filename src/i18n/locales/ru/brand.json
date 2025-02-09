@@ -1,4 +1,5 @@
 {
+  "logo": "Логотип",
   "website": "Официальный сайт",
   "founded-in-year": "Основан в {{year}} г.",
   "closed-in": "Закрыт в {{year}} г.",

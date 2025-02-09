@@ -4,6 +4,9 @@ const nextConfig = {
     serverComponentsExternalPackages: ['knex'],
     serverActions: true,
   },
+  images: {
+    domains: ['images.watcharc.org'],
+  },
   rewrites() {
     return [
       {

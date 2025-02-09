@@ -1,4 +1,5 @@
 {
+  "logo": "Logo",
   "website": "Website",
   "founded-in-year": "Founded in {{year}}",
   "closed-in": "Closed in {{year}}",

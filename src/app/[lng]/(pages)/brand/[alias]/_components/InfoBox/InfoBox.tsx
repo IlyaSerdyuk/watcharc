@@ -1,17 +1,36 @@
+import type { TFunction } from 'i18next';
+
+import type { BrandCartType } from '@models/brand/getDetails';
+
 import Address from './Address';
 import Countries from './Countries';
 import CountriesOfOrigin from './CountriesOfOrigin';
 import Email from './Email';
 import Instagram from './Instagram';
+import BrandLogo from './Logo';
 import Phone from './Phone';
 import Website from './Website';
 import YearClosed from './YearClosed';
 import YearFounded from './YearFounded';
 
-export default function InfoBox({ brand, t, lng }: any) {
+export default function InfoBox({
+  brand,
+  t,
+  lng,
+}: {
+  brand: BrandCartType;
+  t: TFunction;
+  lng: Languages;
+}) {
   return (
     <div>
       <div className="font-medium leading-7">{brand.alternative_titles}</div>
+      <BrandLogo
+        alias={brand.alias}
+        type={brand.logo_type}
+        title={brand.title}
+        t={t}
+      />
       <dl className="flex flex-wrap">
         <Website
           value={brand.website}
