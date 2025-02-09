@@ -40,5 +40,5 @@ export default async function getByCode(
     countries: countries.filter(({ type }) => type === 'current'),
     countriesOfOrigin: countries.filter(({ type }) => type === 'founded'),
     links,
-  };
+  } as BrandCartType;
 }

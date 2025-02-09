@@ -1,6 +1,7 @@
-import { BrandLogoType } from '@models/brand/types';
 import type { TFunction } from 'i18next';
 import Image from 'next/image';
+
+import type { BrandLogoType } from '@models/brand/types';
 
 function getSource(name: string, ext: BrandLogoType): string {
   const host = process.env.NEXT_PUBLIC_IMAGES_HOST;

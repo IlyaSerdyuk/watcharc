@@ -4,6 +4,7 @@ import type { BrandLinkType } from '@models/brand/types';
 
 const httpOnlyRef = [
   'Montre24',
+  //
 ];
 
 function href(type: string, url: string): string {
