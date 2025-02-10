@@ -61,6 +61,27 @@ export interface DbMessage {
   email: string | null;
 }
 
+export interface DbModel {
+  id: number;
+  brand_id: number;
+  reference: string | null;
+  title: string | null;
+  gender: 'unisex' | 'men' | 'women' | 'kids' | null;
+  skeleton: number | null;
+  movement_type:
+    | 'manual'
+    | 'automatic'
+    | 'quartz'
+    | 'hybrid'
+    | 'solar'
+    | 'processor'
+    | 'kinetic'
+    | 'spring-drive'
+    | null;
+  cover_code: string | null;
+  cover_ext: 'png' | 'jpg' | null;
+}
+
 export class DB {
   constructor(public readonly knex: Knex) {}
   get brandAliases() {
@@ -80,5 +101,8 @@ export class DB {
   }
   get messages() {
     return this.knex<DbMessage>('messages');
+  }
+  get models() {
+    return this.knex<DbModel>('models');
   }
 }
