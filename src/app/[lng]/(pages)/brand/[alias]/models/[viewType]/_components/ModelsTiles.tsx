@@ -35,7 +35,7 @@ export default function ModelsTiles({
           <img
             alt={model.title || model.reference || brand.title}
             src={coverSource({ model, brand })}
-            className="aspect-square w-full rounded-md object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80"
+            className="aspect-square w-full rounded-md object-contain group-hover:object-cover lg:aspect-auto lg:h-80"
           />
           <div className="mt-4">
             <h3 className="text-sm text-gray-700">
