@@ -1,13 +1,16 @@
+import { notFound, redirect } from 'next/navigation';
+
 import Breadcrumbs from '@components/Breadcrumbs';
 import Title from '@components/Title';
 import translate from '@i18n/server';
 import getMetadata from '@models/brand/getMetadata';
 import getList from '@models/models/getList';
 
-import type { TViewType } from './_components/Filters';
 import Filters from './_components/Filters';
 import ModelsTable from './_components/ModelsTable';
 import ModelsTiles from './_components/ModelsTiles';
+import type { TViewType } from './_components/views';
+import { hasTableView, hasTilesView } from './_components/views';
 
 type ModelsPageProps = PageProps<{
   alias: string;
@@ -20,7 +23,27 @@ export default async function ModelsPage({
   const { t } = await translate(lng, ['models', 'translation']);
   const brand = await getMetadata(alias);
   if (!brand) {
-    return null;
+    notFound();
+  }
+
+  if (!brand.models_settings || !Object.keys(brand.models_settings).length) {
+    redirect(`/${lng}/brand/${alias}`);
+  }
+
+  switch (viewType) {
+    case 'table':
+      if (!hasTableView(brand.models_settings)) {
+        redirect(`/${lng}/brand/${alias}/models/tiles`);
+      }
+      break;
+    case 'tiles':
+      if (!hasTilesView(brand.models_settings)) {
+        redirect(`/${lng}/brand/${alias}/models/table`);
+      }
+      break;
+    default:
+      // const exhaustiveCheck: never = viewType;
+      redirect(`/${lng}/brand/${alias}/models`);
   }
 
   const models = await getList(brand.id);
@@ -37,7 +60,11 @@ export default async function ModelsPage({
       <Title title={`${t('models-of', { value: brand.title })}`} />
       <Filters current={viewType} brand={brand} lng={lng} />
       {viewType === 'table' ? (
-        <ModelsTable models={models} t={t} />
+        <ModelsTable
+          models={models}
+          settings={brand.models_settings.table}
+          t={t}
+        />
       ) : (
         <ModelsTiles models={models} brand={brand} t={t} />
       )}

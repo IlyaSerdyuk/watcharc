@@ -3,7 +3,8 @@ import Link from 'next/link';
 
 import type { BrandMetadata } from '@models/brand/getMetadata';
 
-export type TViewType = 'grid' | 'table';
+import type { TViewType } from './views';
+import { hasTableView, hasTilesView } from './views';
 
 export default function Filters({
   current,
@@ -14,9 +15,16 @@ export default function Filters({
   brand: BrandMetadata;
   lng: Languages;
 }) {
+  const views = [];
+  hasTilesView(brand.models_settings) && views.push('tiles'); // eslint-disable-line @typescript-eslint/no-unused-expressions
+  hasTableView(brand.models_settings) && views.push('table'); // eslint-disable-line @typescript-eslint/no-unused-expressions
+  if (views.length < 2) {
+    return null;
+  }
+
   return (
     <div className="flex gap-2">
-      {['grid', 'table'].map(option => (
+      {views.map(option => (
         <Link
           key={option}
           href={`/${lng}/brand/${brand.alias}/models/${option}`}

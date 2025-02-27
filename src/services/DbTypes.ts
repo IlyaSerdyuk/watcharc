@@ -34,6 +34,7 @@ export interface DbBrand {
   email: string | null;
   credibility: 'open-source' | 'retailer' | 'owner' | null;
   logo_type: 'svg' | 'png' | null;
+  models_settings: any | null;
 }
 
 export interface DbBrandCountry {

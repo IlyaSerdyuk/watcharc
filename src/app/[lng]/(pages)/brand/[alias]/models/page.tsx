@@ -7,5 +7,5 @@ type ModelsDefaultPageProps = PageProps<{
 export default function ModelsDefaultPage({
   params: { lng, alias },
 }: ModelsDefaultPageProps) {
-  redirect(`/${lng}/brand/${alias}/models/grid`);
+  redirect(`/${lng}/brand/${alias}/models/tiles`);
 }

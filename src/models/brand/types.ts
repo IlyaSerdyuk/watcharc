@@ -1,9 +1,19 @@
 import type { DbBrand, DbBrandLink } from '@services/DbTypes';
 import type { YearAccuracy } from '@services/year';
 
+export interface ModelsSettings {
+  tiles?: boolean;
+  table?:
+    | boolean
+    | {
+        columns?: string[];
+      };
+}
+
 export interface BrandType extends DbBrand {
   year_founded_accuracy: YearAccuracy;
   year_closed_accuracy: YearAccuracy;
+  models_setting?: ModelsSettings;
 }
 
 export const BRAND_FIRST_NUMBER = '8';
