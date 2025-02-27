@@ -12,7 +12,7 @@ export default function ModelsTable({
   settings: Exclude<ModelsSettings['table'], undefined | false>;
   t: TFunction;
 }) {
-  const columns: Record<string, (model: ModelType) => string> = {
+  const columns: Record<string, (model: ModelType) => string | null> = {
     'reference': (model: ModelType) => model.reference,
     'model-title': (model: ModelType) => model.title,
     'movement-type': (model: ModelType) => model.movement_type,
