@@ -4,7 +4,7 @@ import Image from 'next/image';
 import type { BrandLogoType } from '@models/brand/types';
 
 function getSource(name: string, ext: BrandLogoType): string {
-  const host = process.env.NEXT_PUBLIC_IMAGES_HOST;
+  const host = ''; //process.env.NEXT_PUBLIC_IMAGES_HOST;
   const group = name.replace('-', '').slice(0, 2);
   return `${host}/logo/${group}/${name}.${ext}`;
 }

@@ -24,7 +24,10 @@ const exclusionList = [
 ];
 
 export function middleware(request: NextRequest) {
-  if (exclusionList.includes(request.nextUrl.pathname)) {
+  if (
+    exclusionList.includes(request.nextUrl.pathname) ||
+    request.nextUrl.pathname.startsWith('/logo/')
+  ) {
     return NextResponse.next();
   }
 
