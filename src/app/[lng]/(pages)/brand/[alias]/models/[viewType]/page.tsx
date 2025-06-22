@@ -4,12 +4,13 @@ import Breadcrumbs from '@components/Breadcrumbs';
 import Title from '@components/Title';
 import translate from '@i18n/server';
 import getMetadata from '@models/brand/getMetadata';
+import type { ModelsSettings } from '@models/brand/types';
 import getList from '@models/models/getList';
+import { TViewType } from '@models/models/types';
 
 import Filters from './_components/Filters';
 import ModelsTable from './_components/ModelsTable';
 import ModelsTiles from './_components/ModelsTiles';
-import type { TViewType } from './_components/views';
 import { hasTableView, hasTilesView } from './_components/views';
 
 type ModelsPageProps = PageProps<{
@@ -59,10 +60,15 @@ export default async function ModelsPage({
       />
       <Title title={`${t('models-of', { value: brand.title })}`} />
       <Filters current={viewType} brand={brand} lng={lng} />
-      {viewType === 'table' ? (
+      {viewType === TViewType.Table ? (
         <ModelsTable
           models={models}
-          settings={brand.models_settings.table}
+          settings={
+            brand.models_settings.table as Exclude<
+              ModelsSettings['table'],
+              undefined | false
+            >
+          }
           t={t}
         />
       ) : (

@@ -24,7 +24,7 @@ export default function ListOfReferences({
   }
 
   return (
-    <article className="py-10">
+    <article className="my-10">
       <header>
         <h3 className="text-base font-semibold leading-7 text-gray-900 pb-3">
           {t('list-of-references')}

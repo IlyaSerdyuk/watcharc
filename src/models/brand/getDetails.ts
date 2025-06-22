@@ -1,3 +1,4 @@
+import type { ModelType } from '@models/models/types';
 import { db } from '@services/Db';
 
 import type { CountryType } from '../country/types';
@@ -8,6 +9,7 @@ export type BrandCartType = BrandType & {
   countries: Pick<CountryType, 'title' | 'code'>[];
   countriesOfOrigin: Pick<CountryType, 'title' | 'code'>[];
   links: BrandLinkType[];
+  models: ModelType[];
 };
 
 export default async function getByCode(
@@ -19,26 +21,28 @@ export default async function getByCode(
     return undefined;
   }
 
-  const countries = await db.countries
-    .select({
-      title: `countries.title_${lng}`,
-      code: 'countries.code',
-      type: 'brands__countries.type',
-    })
-    .innerJoin(
-      'brands__countries',
-      'brands__countries.country_id',
-      'countries.id',
-    )
-    .where('brands__countries.brand_id', '=', brand.id);
-  const links = await db.brandLinks
-    .where('brand_id', '=', brand.id)
-    .orderBy('type');
+  const [countries, links, models] = await Promise.all([
+    db.countries
+      .select({
+        title: `countries.title_${lng}`,
+        code: 'countries.code',
+        type: 'brands__countries.type',
+      })
+      .innerJoin(
+        'brands__countries',
+        'brands__countries.country_id',
+        'countries.id',
+      )
+      .where('brands__countries.brand_id', '=', brand.id),
+    db.brandLinks.where('brand_id', '=', brand.id).orderBy('type'),
+    db.models.where('brand_id', '=', brand.id).limit(8),
+  ]);
 
   return {
     ...(brand as BrandType),
     countries: countries.filter(({ type }) => type === 'current'),
     countriesOfOrigin: countries.filter(({ type }) => type === 'founded'),
     links,
+    models,
   } as BrandCartType;
 }

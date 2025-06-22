@@ -13,7 +13,7 @@ export interface ModelsSettings {
 export interface BrandType extends DbBrand {
   year_founded_accuracy: YearAccuracy;
   year_closed_accuracy: YearAccuracy;
-  models_setting?: ModelsSettings;
+  models_settings: ModelsSettings | null;
 }
 
 export const BRAND_FIRST_NUMBER = '8';

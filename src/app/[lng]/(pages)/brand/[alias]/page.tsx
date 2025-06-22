@@ -9,6 +9,7 @@ import { metaLangs } from '@services/meta';
 
 import InfoBox from './_components/InfoBox/InfoBox';
 import ListOfReferences from './_components/ListOfReferences';
+import Models from './_components/Models';
 
 type BrandPageProps = PageProps<{
   alias: string;
@@ -54,6 +55,13 @@ export default async function BrandPage({
       <Title title={brand.title} />
       <InfoBox brand={brand} t={t} lng={lng} />
       <ListOfReferences links={brand.links} t={t} />
+      <Models
+        models={brand.models}
+        settings={brand.models_settings}
+        brand={brand}
+        lng={lng}
+        t={t}
+      />
     </>
   );
 }

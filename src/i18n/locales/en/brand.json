@@ -13,5 +13,7 @@
   "credibility-retailer": "Information provided by the brand retailer.",
   "credibility-owner": "Information provided by the official representative of the brand.",
   "not-found": "Brand not found",
-  "go-to-index": "Go to brand index"
+  "go-to-index": "Go to brand index",
+  "models": "Models",
+  "more-models": "More models"
 }

@@ -28,7 +28,7 @@ export default function ModelsTable({
   }
 
   return (
-    <div className="mt-8 -mx-3 flow-root">
+    <div className="-mx-3 flow-root">
       <div className="inline-block min-w-full py-2 align-middle">
         <table className="min-w-full border-separate border-spacing-0">
           <thead>
