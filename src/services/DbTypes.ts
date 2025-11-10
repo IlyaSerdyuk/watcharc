@@ -28,12 +28,13 @@ export interface DbBrand {
   year_founded_accuracy: 'year' | 'decade' | 'century' | null;
   year_closed: number | null;
   year_closed_accuracy: 'year' | 'decade' | 'century' | null;
+  closed: number | null;
   address: string | null;
   place_id: string | null;
   phone: string | null;
   email: string | null;
   credibility: 'open-source' | 'retailer' | 'owner' | null;
-  logo_type: 'svg' | 'png' | null;
+  logo_type: 'svg' | 'png' | 'jpg' | 'gif' | null;
   models_settings: any | null;
 }
 

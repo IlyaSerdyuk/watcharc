@@ -56,14 +56,18 @@ export default function InfoBox({
           t={t}
           lng={lng}
         />
-        <Address
-          value={brand.address}
-          placeID={brand.place_id}
-          title={brand.title}
-          t={t}
-        />
-        <Phone value={brand.phone} t={t} />
-        <Email value={brand.email} t={t} />
+        {brand.closed ? null : (
+          <>
+            <Address
+              value={brand.address}
+              placeID={brand.place_id}
+              title={brand.title}
+              t={t}
+            />
+            <Phone value={brand.phone} t={t} />
+            <Email value={brand.email} t={t} />
+          </>
+        )}
       </dl>
       {brand.credibility && (
         <p className="text-gray-600 text-xs mt-6">
