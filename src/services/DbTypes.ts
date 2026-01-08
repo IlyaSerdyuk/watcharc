@@ -79,6 +79,7 @@ export interface DbModel {
     | 'processor'
     | 'kinetic'
     | 'spring-drive'
+    | 'smart'
     | null;
   cover_code: string | null;
   cover_ext: 'png' | 'jpg' | null;
