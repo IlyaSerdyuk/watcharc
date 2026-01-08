@@ -3,7 +3,7 @@ import type { TFunction } from 'i18next';
 import type { BrandMetadata } from '@models/brand/getMetadata';
 import type { ModelType } from '@models/models/types';
 
-const coverSource = ({
+export const coverSource = ({
   model,
   brand,
 }: {
