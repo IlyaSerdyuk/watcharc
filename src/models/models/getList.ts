@@ -6,7 +6,7 @@ export default async function getList(brandId: number, collectionId: number = 0)
   const query = db.models
     .select('*')
     .where('brand_id', '=', brandId)
-    .orderBy('reference', 'asc');
+    .orderBy('order_in_brand', 'desc');
   if (collectionId) {
     query.andWhere('collection_id', '=', collectionId);
   }

@@ -82,6 +82,7 @@ export interface DbModel {
     | null;
   cover_code: string | null;
   cover_ext: 'png' | 'jpg' | null;
+  order_in_brand: number;
 }
 
 export class DB {
