@@ -26,7 +26,8 @@ const exclusionList = [
 export function middleware(request: NextRequest) {
   if (
     exclusionList.includes(request.nextUrl.pathname) ||
-    request.nextUrl.pathname.startsWith('/logo/')
+    request.nextUrl.pathname.startsWith('/logo/') ||
+    request.nextUrl.pathname.startsWith('/caliber/')
   ) {
     return NextResponse.next();
   }
