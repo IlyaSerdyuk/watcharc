@@ -45,7 +45,7 @@ const Raketa: BrandMetadata = { id: 2875, title: 'Raketa', alias: 'raketa', mode
 const MauriceLacroix: BrandMetadata = { id: 2246, title: 'Maurice Lacroix', alias: 'maurice-lacroix', models_settings: null };
 const Tissot: BrandMetadata = { id: 3498, title: 'Tissot', alias: 'tissot', models_settings: null };
 const Aviator: BrandMetadata = { id: 340, title: 'Aviator', alias: 'aviator', models_settings: null };
-// const Sturmanskie: BrandMetadata = { id: 3338, title: 'Sturmanskie', alias: 'sturmanskie', models_settings: null };
+const Sturmanskie: BrandMetadata = { id: 3338, title: 'Sturmanskie', alias: 'sturmanskie', models_settings: null };
 const MikhailMoskvin: BrandMetadata = {id: 2318, title: 'Mikhail Moskvin', alias: 'mikhail-moskvin', models_settings: null };
 const Luch: BrandMetadata = { id: 2121, title: 'Luch', alias: 'luch', models_settings: null };
 const Garmin: BrandMetadata = { id: 1378, title: 'Garmin', alias: 'garmin', models_settings: null };
@@ -60,6 +60,7 @@ const data = [
   { id: 632, brand: Aviator, reference: 'M.2.30.0.289.6', title: 'MIG-29 SMT', gender: 'men', skeleton: 0, movement_type: 'quartz', cover_code: 'm-2-30-0-289-6', cover_ext: 'png' },
   { id: 630, brand: Tissot, reference: 'T83.6.503.13', title: null, gender: 'men', skeleton: 0, movement_type: 'quartz', cover_code: 't83-6-503-13', cover_ext: 'jpg' },
   { id: 631, brand: Tissot, reference: 'PR 50 J376/476T Titanium', title: null, gender: 'men', skeleton: 0, movement_type: 'quartz', cover_code: 'pr-50-j376-476t', cover_ext: 'jpg' },
+  { id: 722, brand: Sturmanskie, reference: '2609-9045922', title: null, gender: 'men', skeleton: 0, movement_type: 'manual', cover_code: '2609-9045922', cover_ext: 'jpg' },
   { id: 633, brand: Luch, reference: '440170630', title: 'Dreva', gender: 'men', skeleton: 0, movement_type: 'quartz', cover_code: '440170630', cover_ext: 'jpg' },
   { id: 634, brand: MikhailMoskvin, reference: '1505M1–Muonionalusta', title: null, gender: 'men', skeleton: 1, movement_type: 'automatic', cover_code: '1505m1–muonionalusta', cover_ext: 'jpg' },
   { id: 635, brand: MikhailMoskvin, reference: '1215A1L1', title: null, gender: 'men', skeleton: 0, movement_type: 'manual', cover_code: '1215a1l1', cover_ext: 'jpg' },
@@ -69,6 +70,8 @@ const data = [
 ].map(item => ({
   ...item,
   brand_id: item.brand.id,
+  gender: null,
+  movement_type: null,
 })) as ModelWithBrandType[];
 
 export default async function UserPage({ params: { lng }}: PageProps) {
