@@ -28,7 +28,7 @@ export default async function searchBrands(
     })
     .innerJoin('brands', 'brands.id', 'brand_aliases.brand_id')
     .groupBy('brands.id', 'label')
-    .where('brand_aliases.title', 'like', `%${term}%`)
+    .having('label', 'like', `%${term}%`)
     .whereNotNull('brands.alias');
 
   const totalQuery = db.knex.from(baseQuery.as('sub')).count('label as total');
