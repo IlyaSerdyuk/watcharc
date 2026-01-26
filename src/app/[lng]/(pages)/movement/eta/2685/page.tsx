@@ -1,5 +1,6 @@
-import Title from '@components/Title';
 import Image from 'next/image';
+
+import Title from '@components/Title';
 
 function Item({
   title,
@@ -10,9 +11,7 @@ function Item({
 }) {
   return (
     <div className="mt-3 flex w-full flex-none gap-x-3">
-      <dt className="flex-none">
-        {title}:
-      </dt>
+      <dt className="flex-none">{title}:</dt>
       <dd className="text-sm font-medium leading-6 text-gray-900">
         {children}
       </dd>
@@ -26,8 +25,20 @@ export default async function MovementPage() {
       <Title title="ETA 2685" />
       <div className="">
         <div className="flex flex-col float-right">
-          <Image src="/caliber/eta-2685-f.jpg" width="256" height="256" alt="ETA 2685" style={{ 'width': 256 }}  />
-          <Image src="/caliber/eta-2685-b.jpg" width="256" height="256" alt="ETA 2685" style={{ 'width': 256 }} />
+          <Image
+            src="/caliber/eta-2685-f.jpg"
+            width="256"
+            height="256"
+            alt="ETA 2685"
+            style={{ width: 256 }}
+          />
+          <Image
+            src="/caliber/eta-2685-b.jpg"
+            width="256"
+            height="256"
+            alt="ETA 2685"
+            style={{ width: 256 }}
+          />
         </div>
         <dl className="flex flex-wrap">
           <Item title="Manufacturer">ETA</Item>
