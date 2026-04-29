@@ -42,8 +42,10 @@ function title(t: TFunction, lng: Languages, decade: string) {
 }
 
 export async function generateMetadata({
-  params: { lng, decade },
+  params,
 }: DecadePageProps): Promise<Metadata> {
+  const { lng, decade } = await params;
+
   if (!/^[12][0-9][0-9x]x$/.test(decade)) {
     redirect(`/${lng}/brands/founded`);
   }
@@ -57,9 +59,8 @@ export async function generateMetadata({
   };
 }
 
-export default async function DecadePage({
-  params: { lng, decade },
-}: DecadePageProps) {
+export default async function DecadePage({ params }: DecadePageProps) {
+  const { lng, decade } = await params;
   const { t } = await translate(lng);
   const brandGroupedList = await getListByFounded(decade);
   return (

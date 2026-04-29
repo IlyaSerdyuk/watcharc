@@ -21,8 +21,9 @@ export const dynamicParams = false;
 export const revalidate = 3600;
 
 export async function generateMetadata({
-  params: { lng, letter },
+  params,
 }: LetterPageProps): Promise<Metadata> {
+  const { lng, letter } = await params;
   const { t } = await translate(lng);
   return {
     title:
@@ -35,9 +36,8 @@ export async function generateMetadata({
   };
 }
 
-export default async function LetterPage({
-  params: { lng, letter },
-}: LetterPageProps) {
+export default async function LetterPage({ params }: LetterPageProps) {
+  const { lng, letter } = await params;
   const { t } = await translate(lng);
   const brandGroupedList = await getListByFirstLetter(letter);
   return (

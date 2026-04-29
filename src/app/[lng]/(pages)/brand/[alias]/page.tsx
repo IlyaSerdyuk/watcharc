@@ -22,8 +22,10 @@ type BrandPageProps = PageProps<{
 export const revalidate = 3600;
 
 export async function generateMetadata({
-  params: { lng, alias },
+  params,
 }: BrandPageProps): Promise<Metadata | null> {
+  const { lng, alias } = await params;
+
   const brand = await getDetails(alias, lng);
   if (!brand) {
     return null;
@@ -37,10 +39,10 @@ export async function generateMetadata({
   };
 }
 
-export default async function BrandPage({
-  params: { lng, alias },
-}: BrandPageProps) {
+export default async function BrandPage({ params }: BrandPageProps) {
+  const { lng, alias } = await params;
   const { t } = await translate(lng, ['brand', 'translation']);
+
   const brand = await getDetails(alias, lng);
   if (!brand) {
     notFound();

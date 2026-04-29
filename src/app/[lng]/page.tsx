@@ -23,7 +23,8 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default async function Home({ params: { lng } }: PageProps) {
+export default async function Home({ params }: PageProps) {
+  const { lng } = await params;
   const { t } = await translate(lng, 'home');
   const stats = await getStatistics();
   return (

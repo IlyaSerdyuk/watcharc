@@ -11,8 +11,9 @@ import { metaLangs } from '@services/meta';
 export const revalidate = 3600;
 
 export async function generateMetadata({
-  params: { lng },
+  params,
 }: PageProps): Promise<Metadata> {
+  const { lng } = await params;
   const { t } = await translate(lng);
   return {
     title: t('brands-founded'),
@@ -22,7 +23,8 @@ export async function generateMetadata({
   };
 }
 
-export default async function FoundedIndexPage({ params: { lng } }: PageProps) {
+export default async function FoundedIndexPage({ params }: PageProps) {
+  const { lng } = await params;
   const { t } = await translate(lng);
   const items = await getFoundedIndex();
   return (

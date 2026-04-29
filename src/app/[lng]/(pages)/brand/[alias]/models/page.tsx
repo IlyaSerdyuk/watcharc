@@ -4,8 +4,9 @@ type ModelsDefaultPageProps = PageProps<{
   alias: string;
 }>;
 
-export default function ModelsDefaultPage({
-  params: { lng, alias },
+export default async function ModelsDefaultPage({
+  params,
 }: ModelsDefaultPageProps) {
+  const { lng, alias } = await params;
   redirect(`/${lng}/brand/${alias}/models/tiles`);
 }

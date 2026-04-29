@@ -8,8 +8,9 @@ import { metaLangs } from '@services/meta';
 export const revalidate = 86400;
 
 export async function generateMetadata({
-  params: { lng },
+  params,
 }: PageProps): Promise<Metadata> {
+  const { lng } = await params;
   const { t } = await translate(lng, 'statistics');
   return {
     title: t('title'),
@@ -19,9 +20,12 @@ export async function generateMetadata({
   };
 }
 
-export default async function StatisticsPage({ params: { lng } }: PageProps) {
-  const { t } = await translate(lng, 'statistics');
-  const stats = await getStatistics();
+export default async function StatisticsPage({ params }: PageProps) {
+  const { lng } = await params;
+  const [{ t }, stats] = await Promise.all([
+    translate(lng, 'statistics'),
+    getStatistics(),
+  ]);
   const date = new Date();
   return (
     <>

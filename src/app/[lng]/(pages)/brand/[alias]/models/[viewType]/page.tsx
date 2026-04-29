@@ -18,10 +18,10 @@ type ModelsPageProps = PageProps<{
   viewType: TViewType;
 }>;
 
-export default async function ModelsPage({
-  params: { lng, alias, viewType },
-}: ModelsPageProps) {
+export default async function ModelsPage({ params }: ModelsPageProps) {
+  const { lng, alias, viewType } = await params;
   const { t } = await translate(lng, ['models', 'translation']);
+
   const brand = await getMetadata(alias);
   if (!brand) {
     notFound();

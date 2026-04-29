@@ -26,8 +26,9 @@ export const dynamicParams = false;
 export const revalidate = 3600;
 
 export async function generateMetadata({
-  params: { lng, country: countryCode },
+  params,
 }: CountryPageProps): Promise<Metadata | null> {
+  const { lng, country: countryCode } = await params;
   const { t } = await translate(lng);
 
   const country = await getByCode(countryCode, lng);
@@ -43,9 +44,9 @@ export async function generateMetadata({
   };
 }
 
-export default async function CountryPage({
-  params: { lng, country: countryCode },
-}: CountryPageProps) {
+export default async function CountryPage({ params }: CountryPageProps) {
+  const { lng, country: countryCode } = await params;
+
   const country = await getByCode(countryCode, lng);
   if (!country) {
     notFound();

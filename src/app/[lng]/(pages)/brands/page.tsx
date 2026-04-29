@@ -13,8 +13,9 @@ import SectionByOther from './_components/SectionByOther';
 export const revalidate = 3600;
 
 export async function generateMetadata({
-  params: { lng },
+  params,
 }: PageProps): Promise<Metadata> {
+  const { lng } = await params;
   const { t } = await translate(lng);
   return {
     title: t('brands'),
@@ -24,9 +25,10 @@ export async function generateMetadata({
   };
 }
 
-export default async function BrandPage({ params: { lng } }: PageProps) {
-  const { t } = await translate(lng);
-  const [alphabetIndex, countriesIndex] = await Promise.all([
+export default async function BrandPage({ params }: PageProps) {
+  const { lng } = await params;
+  const [{ t }, alphabetIndex, countriesIndex] = await Promise.all([
+    translate(lng),
     getAlphabetIndex(),
     getIndex(lng),
   ]);

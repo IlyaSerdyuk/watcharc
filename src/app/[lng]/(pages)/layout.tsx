@@ -1,12 +1,13 @@
 import Header from '@components/Header';
 
-export default function DefaultLayout({
+export default async function DefaultLayout({
   children,
-  params: { lng },
+  params,
 }: {
   children: React.ReactNode;
-  params: { lng: Languages };
+  params: Promise<{ lng: Languages }>;
 }) {
+  const { lng } = await params;
   return (
     <>
       <Header lng={lng} />

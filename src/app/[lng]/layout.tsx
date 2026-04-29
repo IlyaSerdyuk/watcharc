@@ -12,8 +12,9 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export async function generateMetadata({
-  params: { lng },
+  params,
 }: PageProps): Promise<Metadata> {
+  const { lng } = await params;
   const { t } = await translate(lng);
   return {
     title: 'WatchArc',
@@ -25,13 +26,14 @@ export async function generateStaticParams() {
   return languages.map(lng => ({ lng }));
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-  params: { lng },
+  params,
 }: {
   children: React.ReactNode;
-  params: { lng: Languages };
+  params: Promise<{ lng: Languages }>;
 }) {
+  const { lng } = await params;
   return (
     <html lang={lng} dir={dir(lng)}>
       <head>

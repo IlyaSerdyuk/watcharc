@@ -95,8 +95,25 @@ const Apple: BrandMetadata = {
   alias: 'apple',
   models_settings: null,
 };
+const CigaDesign: BrandMetadata = {
+  id: 789,
+  title: 'CIGA Design',
+  alias: 'ciga-design',
+  models_settings: null,
+};
 
 const data = [
+  {
+    id: 776,
+    brand: CigaDesign,
+    reference: 'U055-TIGR-6B',
+    title: 'Moon Walker',
+    gender: null,
+    skeleton: 0,
+    movement_type: 'automatic',
+    cover_code: 'moonwalker',
+    cover_ext: 'jpg',
+  },
   {
     id: 486,
     brand: Raketa,
@@ -269,7 +286,8 @@ const data = [
   movement_type: null,
 })) as ModelWithBrandType[];
 
-export default async function UserPage({ params: { lng } }: PageProps) {
+export default async function UserPage({ params }: PageProps) {
+  const { lng } = await params;
   const { t } = await translate(lng, ['models', 'translation']);
   return (
     <>
