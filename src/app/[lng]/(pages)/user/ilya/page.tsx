@@ -1,5 +1,6 @@
 import type { TFunction } from 'i18next';
 
+import { Image } from '@components/Image';
 import Title from '@components/Title';
 import translate from '@i18n/server';
 import type { BrandMetadata } from '@models/brand/getMetadata';
@@ -13,9 +14,11 @@ function Item({ model, t }: { model: ModelWithBrandType; t: TFunction }) {
   const { brand } = model;
   return (
     <div className="group relative text-center">
-      <img
+      <Image
         alt={model.title || model.reference || brand.title}
         src={coverSource({ model, brand })}
+        imgproxyHeight={600}
+        imgproxyWidth={600}
         className="aspect-square w-full rounded-md object-contain group-hover:object-cover lg:aspect-auto lg:h-80"
       />
       <div className="mt-4">
@@ -232,7 +235,7 @@ const data = [
     gender: 'men',
     skeleton: 1,
     movement_type: 'automatic',
-    cover_code: '1505m1–muonionalusta',
+    cover_code: '1505m1-muonionalusta',
     cover_ext: 'jpg',
   },
   {

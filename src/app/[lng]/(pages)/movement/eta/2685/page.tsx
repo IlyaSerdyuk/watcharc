@@ -1,5 +1,4 @@
-import Image from 'next/image';
-
+import { Image } from '@components/Image';
 import Title from '@components/Title';
 
 function Item({
@@ -26,18 +25,16 @@ export default async function MovementPage() {
       <div className="">
         <div className="flex flex-col float-right">
           <Image
-            src="/caliber/eta-2685-f.jpg"
-            width="256"
-            height="256"
+            src="calibers/eta/2685/f.jpg"
+            width={256}
+            height={256}
             alt="ETA 2685"
-            style={{ width: 256 }}
           />
           <Image
-            src="/caliber/eta-2685-b.jpg"
-            width="256"
-            height="256"
+            src="calibers/eta/2685/b.jpg"
+            width={256}
+            height={256}
             alt="ETA 2685"
-            style={{ width: 256 }}
           />
         </div>
         <dl className="flex flex-wrap">

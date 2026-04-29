@@ -1,13 +1,7 @@
 import type { TFunction } from 'i18next';
-import Image from 'next/image';
 
+import { Image } from '@components/Image';
 import type { BrandLogoType } from '@models/brand/types';
-
-function getSource(name: string, ext: BrandLogoType): string {
-  const host = '';
-  const group = name.replace('-', '').slice(0, 2);
-  return `${host}/logo/${group}/${name}.${ext}`;
-}
 
 export default function BrandLogo({
   alias,
@@ -27,7 +21,7 @@ export default function BrandLogo({
   return (
     <div className="md:float-right md:ml-6 mt-3 mb-6">
       <Image
-        src={getSource(alias, type)}
+        src={`logo/${alias}.${type}`}
         width={300}
         height={200}
         alt={`${t('logo')} ${title}`}

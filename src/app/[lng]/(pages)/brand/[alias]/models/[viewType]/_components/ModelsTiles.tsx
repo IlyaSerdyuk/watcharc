@@ -1,5 +1,6 @@
 import type { TFunction } from 'i18next';
 
+import { Image } from '@components/Image';
 import type { BrandMetadata } from '@models/brand/getMetadata';
 import type { ModelType } from '@models/models/types';
 
@@ -11,12 +12,12 @@ export const coverSource = ({
   brand: BrandMetadata;
 }) => {
   if (!model.cover_code || !model.cover_ext) {
-    return process.env.NEXT_PUBLIC_DEFAULT_MODEL_COVER;
+    return (
+      process.env.NEXT_PUBLIC_DEFAULT_MODEL_COVER || 'models/placeholder.svg'
+    );
   }
 
-  const host = process.env.NEXT_PUBLIC_IMAGES_HOST;
-  const group = brand.alias.replace('-', '').slice(0, 2);
-  return `${host}/models/${group}/${brand.alias}/${model.cover_code}.${model.cover_ext}`;
+  return `models/${brand.alias}/${model.cover_code}.${model.cover_ext}`;
 };
 
 export default function ModelsTiles({
@@ -32,9 +33,11 @@ export default function ModelsTiles({
     <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
       {models.map(model => (
         <div key={model.id} className="group relative text-center">
-          <img
+          <Image
             alt={model.title || model.reference || brand.title}
             src={coverSource({ model, brand })}
+            imgproxyHeight={600}
+            imgproxyWidth={600}
             className="aspect-square w-full rounded-md object-contain group-hover:object-cover lg:aspect-auto lg:h-80"
           />
           <div className="mt-4">
