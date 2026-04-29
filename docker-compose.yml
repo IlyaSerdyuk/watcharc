@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  nextjs:
+    image: watcharc-app
+    container_name: watcharc
+    env_file:
+      - .env
+    environment:
+      - VIRTUAL_HOST=watcharc.org
+      - LETSENCRYPT_HOST=watcharc.org
+      - LETSENCRYPT_EMAIL=ilya@serdyuk.pro
+      - VIRTUAL_PORT=3000
+    networks:
+      - db_network
+      - proxy_network
+    restart: unless-stopped
+
+networks:
+  proxy_network:
+    external: true
+  db_network:
+    external: true
