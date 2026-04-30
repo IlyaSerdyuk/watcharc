@@ -31,7 +31,7 @@ export default async function RootLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: Promise<{ lng: Languages }>;
+  params: Promise<{ lng: string }>;
 }) {
   const { lng } = await params;
   return (
@@ -44,7 +44,7 @@ export default async function RootLayout({
       </head>
       <body className={inter.className}>
         {children}
-        <Footer lng={lng} />
+        <Footer lng={lng as Languages} />
       </body>
     </html>
   );
