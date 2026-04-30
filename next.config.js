@@ -2,12 +2,9 @@
 const nextConfig = {
   output: 'standalone',
   experimental: {
-    serverComponentsExternalPackages: ['knex'],
     serverActions: true,
   },
-  images: {
-    domains: ['images.watcharc.org'],
-  },
+  serverExternalPackages: ['knex'],
   rewrites() {
     return [
       {
